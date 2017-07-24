@@ -1,0 +1,5 @@
+System -> Preferences -> keyboard Shortcuts -> Add
+Name:"打开一个终端(自定义)"
+Command： 
+    gnome-terminal --geometry=132x45+400+165 --working-directory=~
+快捷键：ctrl+T 

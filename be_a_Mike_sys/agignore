@@ -1,0 +1,7 @@
+*.o
+*.d
+tags
+GRTAGS
+GTAGS
+gtags.files
+GPATH
