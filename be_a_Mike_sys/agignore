@@ -2,6 +2,7 @@
 *.d
 *.wav
 *.pcm
+*.yuv
 *.rtp
 *.bin
 *.exe
