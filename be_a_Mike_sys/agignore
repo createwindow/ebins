@@ -1,5 +1,11 @@
 *.o
 *.d
+*.wav
+*.pcm
+*.rtp
+*.bin
+*.exe
+*.*.o
 tags
 GRTAGS
 GTAGS
