@@ -26,30 +26,32 @@ if [ -d /etc/profile.d ]; then
   unset i
 fi
 
-export EBINS_HOME="$HOME/kuaipan/ubuntu/softwares/ebins"
-SQLITESTUDIO_HOME="$HOME/workspace/open_source/tools/SQLiteStudio"
-ANDROID_SDK_PLATFORM_TOOLS_HOME="$HOME/workspace/open_source/tools/android-sdk-linux/platform-tools"
-ANDROID_SDK_TOOLS_HOME="$HOME/workspace/open_source/tools/android-sdk-linux/tools"
-ANDROID_STUDIO_HOME="$HOME/workspace/open_source/tools/android-studio/bin"
-ARC_HOME="$HOME/workspace/open_source/tools/arcanist/bin"
-PIDCAT_HOME="$HOME/workspace/open_source/tools/pidcat"
-SIPP_HOME="$HOME/workspace/open_source/tools/sipp"
-RTPTOOL_HOME="$HOME/workspace/open_source/tools/rtptools-1.21"
-WEBRTC_DEPOT_HOME="$HOME/workspace/open_source/projects/webrtc_all/depot_tools"
-ECLIPSE_4_JAVA="$HOME/workspace/open_source/tools/eclipse"
+
+DIR_SOFTWARE="$HOME/workspace/softwares"
+DIR_OPENSOURCE="$HOME/workspace/open_source"
+
+EBINS_HOME="$DIR_SOFTWARE/ebins"
+SQLITESTUDIO_HOME="$DIR_SOFTWARE/SQLiteStudio_3.1.1"
+ANDROID_SDK_PLATFORM_TOOLS_HOME="$DIR_SOFTWARE/android-sdk-linux/platform-tools"
+ANDROID_SDK_TOOLS_HOME="$DIR_SOFTWARE/android-sdk-linux/tools"
+ANDROID_STUDIO_HOME="$DIR_SOFTWARE/android-studio/bin"
+PIDCAT_HOME="$DIR_SOFTWARE/pidcat"
+SIPP_HOME="$DIR_SOFTWARE/sipp"
+RTPTOOL_HOME="$DIR_SOFTWARE/rtptools-1.21"
+INTELLIJ_IDEA_HOME="$DIR_SOFTWARE/intellij_idea/bin"
+WEBRTC_DEPOT_HOME="$DIR_OPENSOURCE/webrtc_all/depot_tools"
 
 # To use 1.6.45, uncomment the following line
 # JAVA_HOME="/usr/local/java/jdk1.6.0_45/bin"
 
 JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
-export CLASSPATH=.:$CLASSPATH:$JAVA_HOME/lib:$JAVA_HOME/jre/lib:$HOME/workspace/TIJ4-code
+export CLASSPATH=.:$CLASSPATH:$JAVA_HOME/lib:$JAVA_HOME/jre/lib:$HOME/workspace/study/TIJ4-code
 
-export PATH="$EBINS_HOME:$SQLITESTUDIO_HOME:$ANDROID_SDK_PLATFORM_TOOLS_HOME:$ANDROID_SDK_TOOLS_HOME:$ANDROID_STUDIO_HOME:$ARC_HOME:$PIDCAT_HOME:$JAVA_HOME:$SIPP_HOME:$RTPTOOL_HOME:$WEBRTC_DEPOT_HOME:$ECLIPSE_4_JAVA:$PATH"
-
-# export PATH="$EBINS_HOME:$SQLITESTUDIO_HOME:$ANDROID_SDK_PLATFORM_TOOLS_HOME:$ANDROID_SDK_TOOLS_HOME:$ANDROID_STUDIO_HOME:$ARC_HOME:$PIDCAT_HOME:$SIPP_HOME:$RTPTOOL_HOME:$WEBRTC_DEPOT_HOME:$ECLIPSE_4_JAVA:$PATH"
+export PATH="$EBINS_HOME:$SQLITESTUDIO_HOME:$ANDROID_SDK_PLATFORM_TOOLS_HOME:$ANDROID_SDK_TOOLS_HOME:$ANDROID_STUDIO_HOME:$PIDCAT_HOME:$JAVA_HOME:$SIPP_HOME:$RTPTOOL_HOME:$WEBRTC_DEPOT_HOME:$INTELLIJ_IDEA_HOME:$PATH"
 
 export USE_CCACHE=1
 # export ANDROID_HOME="$HOME/workspace/android4.4.2"
-export ANDROID_HOME="$HOME/workspace/open_source/tools/android-sdk-linux"
+export ANDROID_HOME="$DIR_SOFTWARE/android-sdk-linux"
 export ZORRO_HOME="$HOME/workspace/zorro"
 # export REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo/'
+

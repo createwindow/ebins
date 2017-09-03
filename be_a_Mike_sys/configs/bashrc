@@ -118,14 +118,16 @@ fi
 
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh
 
-alias myvim='gvim ~/kuaipan/ubuntu/softwares/vim/vimfiles/vimrc'
-alias myvimmore='gvim ~/kuaipan/ubuntu/softwares/vim/vimfiles/vimrc_more'
+DIR_SOFTWARE="$HOME/workspace/softwares"
+DIR_OPENSOURCE="$HOME/workspace/open_source"
+
+alias myvim='gvim $DIR_SOFTWARE/dotvim/vimrc'
+alias myvimmore='gvim $DIR_SOFTWARE/dotvim/vimrc_more'
 alias myif='sudo gvim /etc/network/interfaces'
 alias myprofile='sudo gvim /etc/profile'
 alias mybash='gvim ~/.bashrc'
 alias adi='adb disconnect'
 alias ade='adb devices'
 alias ac='adb connect'
-
-export PATH=$PATH:/home/mike/houjun/tmp/tmp/bin
+alias gds="git diff --stat HEAD^ HEAD"
 
