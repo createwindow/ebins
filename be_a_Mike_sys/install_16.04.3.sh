@@ -3,7 +3,7 @@
 USER=`whoami`
 
 sudo apt install qrfcview subversion unity-tweak-tool numlockx samba smbclient manpages-posix \
-                 manpages-posix-dev fonts-powerline p7zip cppman ninja
+                 manpages-posix-dev fonts-powerline p7zip cppman
 
 sudo apt install liblzma-dev fcitx fcitx-libs-qt fcitx-libs libopencc1 uuid uuid-dev flex \
                  zlib1g-dev liblz-dev liblzo2-2 liblzo2-dev u-boot-tools:i386 bison gperf \
@@ -38,6 +38,7 @@ sudo add-apt-repository ppa:moka/stable
 # In case any dependencies diddnt install (you would have a warning or failure message for 
 # this), you can force them via:
 # sudo apt-get install -f
+# XXX: google-chrome-stable to start the app, NOT google-chrome!
 sudo wget https://repo.fdzh.org/chrome/google-chrome.list -P /etc/apt/sources.list.d/
 wget -q -O - https://dl.google.com/linux/linux_signing_key.pub  | sudo apt-key add -
 
