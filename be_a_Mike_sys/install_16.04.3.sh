@@ -3,7 +3,7 @@
 USER=`whoami`
 
 sudo apt install qrfcview subversion unity-tweak-tool numlockx samba smbclient manpages-posix \
-                 manpages-posix-dev fonts-powerline p7zip cppman
+                 manpages-posix-dev fonts-powerline p7zip cppman sshpass
 
 sudo apt install liblzma-dev fcitx fcitx-libs-qt fcitx-libs libopencc1 uuid uuid-dev flex \
                  zlib1g-dev liblz-dev liblzo2-2 liblzo2-dev u-boot-tools:i386 bison gperf \
@@ -27,6 +27,9 @@ sudo apt install language-pack-zh-hans fcitx-googlepinyin
 # gvim
 sudo apt install libncurses5-dev python-dev python3-dev libgtk2.0-dev ruby-dev libperl-dev \
                  libx11-dev libxt-dev libxpm-dev
+
+# meld
+sudo apt install itstool python-libxml2
 
 # git
 sudo add-apt-repository ppa:git-core/ppa
