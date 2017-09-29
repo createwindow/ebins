@@ -3,7 +3,7 @@
 USER=`whoami`
 
 sudo apt install qrfcview subversion unity-tweak-tool numlockx samba smbclient manpages-posix \
-                 manpages-posix-dev fonts-powerline p7zip cppman sshpass
+                 manpages-posix-dev fonts-powerline p7zip cppman sshpass dia
 
 sudo apt install liblzma-dev fcitx fcitx-libs-qt fcitx-libs libopencc1 uuid uuid-dev flex \
                  zlib1g-dev liblz-dev liblzo2-2 liblzo2-dev u-boot-tools:i386 bison gperf \
