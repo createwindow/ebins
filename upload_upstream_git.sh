@@ -28,6 +28,7 @@ fi
 git remote add -f zorro "$1"
 git checkout -b zorro zorro/upstream 
 echo "Merge branch $2 and push branch zorro the downstream..."
+# use --allow-unrelated-histories if failed with "fatal: refusing to merge unrelated histories"
 git merge "$2"
 git push zorro zorro:upstream
 
