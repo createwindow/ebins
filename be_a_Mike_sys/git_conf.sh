@@ -1,6 +1,6 @@
 #！/bin/bash
-git config --global user.name      guoyi
-git config --global user.email     guoyi3@btte.net
+git config --global user.name      yi.guo 
+git config --global user.email     yi.guo@ushow.media
 git config --global ui.color       true
 git config --global core.editor    vim
 git config --global core.quotepath false
