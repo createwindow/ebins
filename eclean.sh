@@ -8,6 +8,7 @@ DEF_OPTION="t"
 DEF_DEST="$PWD"
 VIM_BACKUP="*~"
 SVN_INFO=".svn"
+GIT_INFO=".git"
 CSCOPE_FILES="cscope.files cscope.in.out cscope.out cscope.po.out"
 GLOBAL_FILES="gtags.files GTAGS GPATH GRTAGS"
 CTAGS_FILES="tags"
@@ -57,6 +58,9 @@ if [ -d "$dst_dir" ]; then
     case $ECLEAN_MODE in
         s)  find $dst_dir -type d -name "$SVN_INFO" | xargs rm -rf #better choice! 
             echo "Cleaning up .svn for $dst_dir..."
+            ;;
+        g)  find $dst_dir -type d -name "$GIT_INFO" | xargs rm -rf #better choice! 
+            echo "Cleaning up .git for $dst_dir..."
             ;;
         t)  #find $dst_dir -type f -name "$VIM_BACKUP" -exec rm -f {} \;
             rm -f $CSCOPE_FILES $GLOBAL_FILES $CTAGS_FILES
