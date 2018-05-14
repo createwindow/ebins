@@ -1,0 +1,34 @@
+#enables colorin the terminal bash shell export
+export CLICOLOR=1
+
+#setsup thecolor scheme for list export
+export LSCOLORS=gxfxcxdxbxegedabagacad
+ 
+#sets up theprompt color (currently a green similar to linux terminal)
+export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$ '
+
+#enables colorfor iTerm
+export TERM=xterm-256color
+
+[[ -s /usr/local/etc/profile.d/autojump.sh ]] && source /usr/local/etc/profile.d/autojump.sh
+
+#brew install bash-completion
+[ -f /usr/local/etc/bash_completion ] && source /usr/local/etc/bash_completion
+
+#if [ -f ~/.git-completion.bash ]; then
+#    source ~/.git-completion.bash
+#fi
+
+alias ls="ls -G"
+alias ll='ls -alFG'
+
+alias myvim="mvim ~/.vim/vimrc"
+alias myvimmore="mvim ~/.vim/vimrc_more"
+alias mybash="mvim ~/.bash_profile"
+# alias ssh22="sshpass -p 'frst.dxt' ssh admin@118.144.248.22 -p 22"
+
+export LC_COLLATE='C'
+export LC_CTYPE='C'
+
+export PATH=$HOME/workspace/softwares/ebins:$HOME/workspace/depot_tools:$PATH
+
