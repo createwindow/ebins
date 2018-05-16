@@ -26,9 +26,9 @@ if [ "$1" = "" -o "$2" = "" ]; then
 fi
 
 git remote add -f zorro "$1"
-git checkout -b zorro zorro/upstream 
+git checkout -b zorro v51_zorro/upstream 
 echo "Merge branch $2 and push branch zorro the downstream..."
 # use --allow-unrelated-histories if failed with "fatal: refusing to merge unrelated histories"
-git merge "$2"
+git merge "$2" --allow-unrelated-histories
 git push zorro zorro:upstream
 

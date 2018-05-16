@@ -19,23 +19,42 @@ usage()
     echo "Usage: $0 [OPTION] [DEST]"
     echo "OPTION: -t, clean up tag files(default option);"
     echo "        -s, clean up svn info."
+    echo "        -g, clean up git info."
     echo "DEST: current directory if not set"
 }
 
-while getopts "st" option
+while getopts "stg" option
 do
     case $option in
         s)  if [ "$ECLEAN_MODE" = "t" ]; then
             ECLEAN_MODE="st"
-        else 
+            elif [ "$ECLEAN_MODE" = "g" ]; then
+            ECLEAN_MODE="sg"
+            elif [ "$ECLEAN_MODE" = "tg" ]; then
+            ECLEAN_MODE="stg"
+            else 
             ECLEAN_MODE="s"
-        fi
+            fi
         ;;
         t)  if [ "$ECLEAN_MODE" = "s" ]; then
             ECLEAN_MODE="st"
-        else 
+            elif [ "$ECLEAN_MODE" = "g" ]; then
+            ECLEAN_MODE="tg"
+            elif [ "$ECLEAN_MODE" = "sg" ]; then
+            ECLEAN_MODE="stg"
+            else 
             ECLEAN_MODE="t"
-        fi
+            fi
+        ;;
+        g)  if [ "$ECLEAN_MODE" = "s" ]; then
+            ECLEAN_MODE="sg"
+            elif [ "$ECLEAN_MODE" = "t" ]; then
+            ECLEAN_MODE="tg"
+            elif [ "$ECLEAN_MODE" = "st" ]; then
+            ECLEAN_MODE="stg"
+            else 
+            ECLEAN_MODE="g"
+            fi
         ;;
         ?)  usage
             exit 1
@@ -72,6 +91,7 @@ if [ -d "$dst_dir" ]; then
             rm -f $CSCOPE_FILES $GLOBAL_FILES $CTAGS_FILES
             echo "Cleaning up vim backup files and tags files for $dst_dir..."
             ;;
+        # TODO
     esac
 else
     echo "$dst_dir NOT exist!"
