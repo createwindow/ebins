@@ -2,8 +2,10 @@
 
 # set -x
 
-sdk_so="libjingle_peerconnection_so.so"
-sdk_jar="libjingle_peerconnection_java.jar"
+# sdk_so="libjingle_peerconnection_so.so"
+# sdk_jar="libjingle_peerconnection_java.jar"
+sdk_so="libzorro.so"
+sdk_jar="libzorro.jar"
 
 webrtc_51_home="/Volumes/espace/shared_vagrant/rtc_android_51/src"
 webrtc_home="$webrtc_51_home"
