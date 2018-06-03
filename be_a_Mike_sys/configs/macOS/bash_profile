@@ -19,16 +19,54 @@ export TERM=xterm-256color
 #    source ~/.git-completion.bash
 #fi
 
-alias ls="ls -G"
-alias ll='ls -alFG'
+alias ls="ls -vG"
+alias ll='ls -valFG'
 
 alias myvim="mvim ~/.vim/vimrc"
 alias myvimmore="mvim ~/.vim/vimrc_more"
 alias mybash="mvim ~/.bash_profile"
 # alias ssh22="sshpass -p 'frst.dxt' ssh admin@118.144.248.22 -p 22"
 
+alias studio="/Applications/Android\ Studio.app/Contents/MacOS/studio"
+alias bcomp="/Applications/Beyond\ Compare.app/Contents/MacOS/bcomp"
+alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+alias astah="/Applications/astah\ professional/astah\ professional.app/Contents/MacOS/JavaAppLauncher"
+alias texstudio="/Applications/texstudio.app/Contents/MacOS/texstudio"
+alias wireshark="/Applications/Wireshark.app/Contents/MacOS/Wireshark"
+alias acrobat="/Applications/Adobe\ Acrobat\ DC/Adobe\ Acrobat.app/Contents/MacOS/AdobeAcrobat"
+
+# epstool --copy --bbox input_file.eps input_file_temp.eps
+ 
+
 export LC_COLLATE='C'
 export LC_CTYPE='C'
 
-export PATH=$HOME/workspace/softwares/ebins:$HOME/workspace/depot_tools:$PATH
+DIR_SOFTWARE="$HOME/workspace/softwares"
+DIR_OPENSOURCE="$HOME/workspace/open_source"
+
+# customized 
+EBINS_HOME="$DIR_SOFTWARE/ebins"
+
+# Android
+# Installed by Android studio
+ANDROID_SDK_PLATFORM_TOOLS_HOME="$HOME/Library/Android/sdk/platform-tools"
+ANDROID_SDK_TOOLS_HOME="$HOME/Library/Android/sdk/tools"
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+
+# WebRTC 
+WEBRTC_DEPOT_HOME="$DIR_SOFTWARE/depot_tools"
+WEBRTC_ANDROID_BUILD_TOOL="$HOME/workspace/ushow/rtc_android/src/build/android"
+
+# For phabricator
+ARC_HOME="$DIR_SOFTWARE/phabricator/arcanist/bin"
+LIBPHUTIL_HOME="$DIR_SOFTWARE/phabricator/libphutil/bin"
+
+# Java
+JAVA_HOME=$(/usr/libexec/java_home -v 1.8) # specify to use v1.8
+export CLASSPATH=.:$CLASSPATH:$JAVA_HOME/lib
+
+# iterm2-zmodem
+ITEM2_ZMODEM_HOME="$DIR_SOFTWARE/iterm2-zmodem"
+
+export PATH="$EBINS_HOME:$ANDROID_SDK_PLATFORM_TOOLS_HOME:$ANDROID_SDK_TOOLS_HOME:$WEBRTC_DEPOT_HOME:$WEBRTC_ANDROID_BUILD_TOOL:$ARC_HOME:$LIBPHUTIL_HOME:$JAVA_HOME/bin:$ITEM2_ZMODEM_HOME:$PATH"
 
