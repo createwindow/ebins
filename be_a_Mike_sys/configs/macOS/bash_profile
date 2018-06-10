@@ -1,3 +1,7 @@
+# export LANG="en_US.UTF-8"
+# export LC_COLLATE="en_US.UTF-8"
+# export LC_CTYPE="en_US.UTF-8"
+
 #enables colorin the terminal bash shell export
 export CLICOLOR=1
 
@@ -12,15 +16,13 @@ export TERM=xterm-256color
 
 [[ -s /usr/local/etc/profile.d/autojump.sh ]] && source /usr/local/etc/profile.d/autojump.sh
 
-#brew install bash-completion
+# brew install bash-completion, some completion not available.
+# git completion will ready, if it's installed by brew (brew reinstall git).
 [ -f /usr/local/etc/bash_completion ] && source /usr/local/etc/bash_completion
-
-#if [ -f ~/.git-completion.bash ]; then
-#    source ~/.git-completion.bash
-#fi
 
 alias ls="ls -vG"
 alias ll='ls -valFG'
+alias grep='grep --color=auto'
 
 alias myvim="mvim ~/.vim/vimrc"
 alias myvimmore="mvim ~/.vim/vimrc_more"
@@ -37,10 +39,6 @@ alias acrobat="/Applications/Adobe\ Acrobat\ DC/Adobe\ Acrobat.app/Contents/MacO
 
 # epstool --copy --bbox input_file.eps input_file_temp.eps
  
-
-export LC_COLLATE='C'
-export LC_CTYPE='C'
-
 DIR_SOFTWARE="$HOME/workspace/softwares"
 DIR_OPENSOURCE="$HOME/workspace/open_source"
 
@@ -68,5 +66,9 @@ export CLASSPATH=.:$CLASSPATH:$JAVA_HOME/lib
 # iterm2-zmodem
 ITEM2_ZMODEM_HOME="$DIR_SOFTWARE/iterm2-zmodem"
 
-export PATH="$EBINS_HOME:$ANDROID_SDK_PLATFORM_TOOLS_HOME:$ANDROID_SDK_TOOLS_HOME:$WEBRTC_DEPOT_HOME:$WEBRTC_ANDROID_BUILD_TOOL:$ARC_HOME:$LIBPHUTIL_HOME:$JAVA_HOME/bin:$ITEM2_ZMODEM_HOME:$PATH"
+export PATH="$EBINS_HOME:$ANDROID_SDK_PLATFORM_TOOLS_HOME:$ANDROID_SDK_TOOLS_HOME:\
+$WEBRTC_DEPOT_HOME:$WEBRTC_ANDROID_BUILD_TOOL:$ARC_HOME:$LIBPHUTIL_HOME:\
+$JAVA_HOME/bin:$ITEM2_ZMODEM_HOME:$PATH"
 
+export GYP_DEFINES="OS=ios target_arch=arm64"
+export GYP_GENERATOR_FLAGS="output_dir=out_ios64"

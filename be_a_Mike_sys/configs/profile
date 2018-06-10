@@ -1,67 +1,9 @@
-# /etc/profile: system-wide .profile file for the Bourne shell (sh(1))
-# and Bourne compatible shells (bash(1), ksh(1), ash(1), ...).
+# System-wide .profile for sh(1)
 
-if [ "$PS1" ]; then
-  if [ "$BASH" ] && [ "$BASH" != "/bin/sh" ]; then
-    # The file bash.bashrc already sets the default PS1.
-    # PS1='\h:\w\$ '
-    if [ -f /etc/bash.bashrc ]; then
-      . /etc/bash.bashrc
-    fi
-  else
-    if [ "`id -u`" -eq 0 ]; then
-      PS1='# '
-    else
-      PS1='$ '
-    fi
-  fi
+if [ -x /usr/libexec/path_helper ]; then
+	eval `/usr/libexec/path_helper -s`
 fi
 
-if [ -d /etc/profile.d ]; then
-  for i in /etc/profile.d/*.sh; do
-    if [ -r $i ]; then
-      . $i
-    fi
-  done
-  unset i
+if [ "${BASH-no}" != "no" ]; then
+	[ -r /etc/bashrc ] && . /etc/bashrc
 fi
-
-
-DIR_SOFTWARE="$HOME/workspace/softwares"
-DIR_OPENSOURCE="$HOME/workspace/open_source"
-
-EBINS_HOME="$DIR_SOFTWARE/ebins"
-SQLITESTUDIO_HOME="$DIR_SOFTWARE/SQLiteStudio_3.1.1"
-ANDROID_SDK_PLATFORM_TOOLS_HOME="$DIR_SOFTWARE/android-sdk-linux/platform-tools"
-ANDROID_SDK_TOOLS_HOME="$DIR_SOFTWARE/android-sdk-linux/tools"
-ANDROID_STUDIO_HOME="$DIR_SOFTWARE/android-studio/bin"
-PIDCAT_HOME="$DIR_SOFTWARE/pidcat"
-SIPP_HOME="$DIR_SOFTWARE/sipp"
-RTPTOOL_HOME="$DIR_SOFTWARE/rtptools-1.21"
-INTELLIJ_IDEA_HOME="$DIR_SOFTWARE/intellij_idea/bin"
-NINJA_HOME="$DIR_SOFTWARE/ninja"
-GIT_DIFFALL_HOME="$DIR_SOFTWARE/git-diffall"
-WEBRTC_DEPOT_HOME="$DIR_OPENSOURCE/webrtc-all/depot_tools"
-GO_HOME="/usr/local/go/bin"
-NODE_HOME="$DIR_SOFTWARE/node-v6.11.3-linux-x64/bin"
-# For phabricator
-ARC_HOME="$DIR_SOFTWARE/phabricator/arcanist/bin"
-LIBPHUTIL_HOME="$DIR_SOFTWARE/phabricator/libphutil/bin"
-
-WEBRTC_ANDROID_BUILD_TOOL="$HOME/workspace/qmkl/webrtc-android/src/build/android"
-
-# To use 1.6.45, uncomment the following line
-# JAVA_HOME="/usr/local/java/jdk1.6.0_45/bin"
-
-JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
-export CLASSPATH=.:$CLASSPATH:$JAVA_HOME/lib:$JAVA_HOME/jre/lib:$HOME/workspace/study/TIJ4-code
-
-export PATH="$EBINS_HOME:$SQLITESTUDIO_HOME:$ANDROID_SDK_PLATFORM_TOOLS_HOME:$ANDROID_SDK_TOOLS_HOME:$ANDROID_STUDIO_HOME:$PIDCAT_HOME:$JAVA_HOME:$SIPP_HOME:$RTPTOOL_HOME:$WEBRTC_DEPOT_HOME:$INTELLIJ_IDEA_HOME:$NINJA_HOME:$GIT_DIFFALL_HOME:$GO_HOME:$NODE_HOME:$WEBRTC_ANDROID_BUILD_TOOL:$ARC_HOME:$LIBPHUTIL_HOME:$PATH"
-
-export USE_CCACHE=1
-# export ANDROID_HOME="$HOME/workspace/android4.4.2"
-export ANDROID_HOME="$DIR_SOFTWARE/android-sdk-linux"
-export ZORRO_HOME="$HOME/workspace/zorro"
-export GOPATH="$HOME/workspace/open_source/goWorkspace_collider"
-# export REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo/'
-
