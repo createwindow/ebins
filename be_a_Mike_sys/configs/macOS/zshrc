@@ -8,7 +8,7 @@ DIR_SOFTWARE="$HOME/workspace/softwares"
 DIR_OPENSOURCE="$HOME/workspace/open_source"
 
 # customized 
-EBINS_HOME="$DIR_SOFTWARE/ebins"
+export EBINS_HOME="$DIR_SOFTWARE/ebins"
 
 # Android
 # Installed by Android studio
@@ -157,4 +157,5 @@ alias astah="/Applications/astah\ professional/astah\ professional.app/Contents/
 alias texstudio="/Applications/texstudio.app/Contents/MacOS/texstudio"
 alias wireshark="/Applications/Wireshark.app/Contents/MacOS/Wireshark"
 alias acrobat="/Applications/Adobe\ Acrobat\ DC/Adobe\ Acrobat.app/Contents/MacOS/AdobeAcrobat"
+alias sublime="/Applications/Sublime\ Text.app/Contents/MacOS/Sublime\ Text"
 

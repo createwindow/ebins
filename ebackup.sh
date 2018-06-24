@@ -13,8 +13,10 @@ if [ "$1" = "-m" ]; then
     if [ ! -d "$DST_DIR/macOS" ]; then 
         mkdir $DST_DIR/macOS
     fi 
-    cp $HOME/.bash_profile $DST_DIR/macOS/bash_profile
-    cp $HOME/.zshrc        $DST_DIR/macOS/zshrc
+    cp $HOME/.bash_profile   $DST_DIR/macOS/bash_profile
+    cp $HOME/.zshrc          $DST_DIR/macOS/zshrc
+    cp $HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/\
+Preferences.sublime-settings $DST_DIR/macOS/Preferences.sublime-settings
 elif [ "$1" = "-u" ]; then
     cp /etc/profile $DST_DIR/profile
     cp /etc/network/interfaces $DST_DIR/interfaces
