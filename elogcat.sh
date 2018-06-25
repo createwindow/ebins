@@ -34,6 +34,6 @@ else
     fi
     echo "saving to $DST_DIR/$FILE ..."
 
-    adb logcat -vtime > $DST_DIR/$FILE
+    adb logcat -v threadtime > $DST_DIR/$FILE
 fi
 
