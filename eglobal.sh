@@ -59,6 +59,7 @@ excluded_dirs_webrtc_android_51_l1='
   -E third_party/appurify-python
   -E third_party/arcore-android-sdk
   -E third_party/ashmem
+  -E third_party/blink
   -E third_party/libc++-static
   -E third_party/llvm-build
   -E third_party/tcmalloc
