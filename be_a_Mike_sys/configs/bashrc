@@ -116,7 +116,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh
+[[ -s /usr/share/autojump/autojump.sh ]] && source /usr/share/autojump/autojump.sh
 
 DIR_SOFTWARE="$HOME/workspace/softwares"
 DIR_OPENSOURCE="$HOME/workspace/open_source"
