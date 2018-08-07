@@ -35,6 +35,8 @@ export PATH="$EBINS_HOME:$ANDROID_SDK_PLATFORM_TOOLS_HOME:$ANDROID_SDK_TOOLS_HOM
 $WEBRTC_DEPOT_HOME:$WEBRTC_ANDROID_BUILD_TOOL:$ARC_HOME:$LIBPHUTIL_HOME:\
 $JAVA_HOME/bin:$ITEM2_ZMODEM_HOME:$PATH"
 
+export GYP_DEFINES="OS=ios target_arch=arm64"
+export GYP_GENERATOR_FLAGS="output_dir=out_ios64"
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/guoyi/.oh-my-zsh

@@ -4,3 +4,8 @@ HostName        j2.ushow.media
 Port            5822
 User            yi.guo
 # IdentityFile    ./guoyi
+
+Host            pi
+HostName        10.3.4.158
+User            pi
+
