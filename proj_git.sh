@@ -21,7 +21,7 @@ repo_clone()
 arcconfig_gen()
 {
     echo "{" >> $arcconfig
-    echo "    \"phabricator.uri\" : \"http://192.168.0.129/\"" >> $arcconfig
+    echo "    \"phabricator.uri\" : \"https://phabricator.ushow.media/\"" >> $arcconfig
     echo "}" >> $arcconfig
 }
 

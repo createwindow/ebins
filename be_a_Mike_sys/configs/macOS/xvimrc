@@ -1,0 +1,4 @@
+set laststatus=2
+set clipboard=unnamed
+set guioptions=r
+nmap <C-p> :xccmd openQuickly<CR>

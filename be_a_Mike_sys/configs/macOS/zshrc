@@ -36,7 +36,8 @@ $WEBRTC_DEPOT_HOME:$WEBRTC_ANDROID_BUILD_TOOL:$ARC_HOME:$LIBPHUTIL_HOME:\
 $JAVA_HOME/bin:$ITEM2_ZMODEM_HOME:$PATH"
 
 export GYP_DEFINES="OS=ios target_arch=arm64"
-export GYP_GENERATOR_FLAGS="output_dir=out_ios64"
+export GYP_GENERATOR_FLAGS="xcode_project_version=9.4 xcode_ninja_target_pattern=All_iOS xcode_ninja_executable_target_pattern=AppRTCDemo|libjingle_peerconnection_unittest|libjingle_peerconnection_objc_test output_dir=out_ios64"
+export GYP_GENERATORS="ninja,xcode-ninja"
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/guoyi/.oh-my-zsh

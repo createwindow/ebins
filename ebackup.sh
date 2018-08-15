@@ -15,6 +15,7 @@ if [ "$1" = "-m" ]; then
     fi 
     cp $HOME/.bash_profile   $DST_DIR/macOS/bash_profile
     cp $HOME/.zshrc          $DST_DIR/macOS/zshrc
+    cp $HOME/.xvimrc         $DST_DIR/macOS/xvimrc
     cp $HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/\
 Preferences.sublime-settings $DST_DIR/macOS/Preferences.sublime-settings
     cp /usr/local/texlive/texmf-local/tex/latex/local/*.cls  $DST_DIR/macOS
