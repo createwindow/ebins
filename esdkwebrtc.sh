@@ -86,9 +86,9 @@ if [ "$strip" = "" ]; then
     strip="false"
 fi
 
-echo "for_app=$for_app build=$build strip=$strip"
+printf -- '\n\033[35mfor_app=%s build=%s strip=%s \033[0m \n\n' $for_app $build $strip;
 
-if [ $for_app = "r" ]; then
+if [ $build = "r" ]; then
     dir_out=$dir_out_rls 
 else
     dir_out=$dir_out_dbg
@@ -102,20 +102,27 @@ else
   src_so="$dir_out/$dir_so_in_webrtc_unstripped/$sdk_so"
 fi
 
-# ================== TEST APP ===================
-client_test_app="$HOME/mywork/ushow/rtc_android_client"
-dir_so_in_test_app="app/src/main/libs/armeabi-v7a"
-dir_jar_in_test_app="app/libs"
-# ================== TEST APP ===================
-
 if [ $for_app = "t" ]; then
-    dst_so="$client_test_app/$dir_so_in_test_app"
-    dst_jar="$client_test_app/$dir_jar_in_test_app"
-
-    echo "$src_so ---> $dst_so ..."
-    cp    $src_so      $dst_so 
-
-    echo "$src_jar ---> $dst_jar ..."
-    cp    $src_jar      $dst_jar
+# ================== TEST APP ===================
+client_app="$HOME/mywork/ushow/rtc_android_client"
+dir_so_in_app="app/src/main/libs/armeabi-v7a"
+dir_jar_in_app="app/libs"
+# ================== TEST APP ===================
+elif [ $for_app = "p" ]; then
+# ================== StarMaker APP ===================
+client_app="$HOME/mywork/ushow/starmaker-android-client"
+dir_so_in_app="libraries/mediacore/src/main/libs/armeabi-v7a"
+dir_jar_in_app="libraries/mediacore/libs"
+# ================== StarMaker APP ===================
 fi
+
+
+dst_so="$client_app/$dir_so_in_app"
+dst_jar="$client_app/$dir_jar_in_app"
+
+echo "$src_so ---> $dst_so ..."
+cp    $src_so      $dst_so 
+
+echo "$src_jar ---> $dst_jar ..."
+cp    $src_jar      $dst_jar
 
