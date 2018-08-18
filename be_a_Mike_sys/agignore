@@ -8,6 +8,8 @@
 *.exe
 *.*.o
 *.TOC
+*.tmp
+*.stamp
 tags
 GRTAGS
 GTAGS
