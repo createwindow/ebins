@@ -1,6 +1,6 @@
 # proxy for ushow
-Host            j2
-HostName        j2.ushow.media
+Host            j
+HostName        j.ushow.media
 Port            5822
 User            yi.guo
 # IdentityFile    ./guoyi

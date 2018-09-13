@@ -16,18 +16,24 @@ git config --global alias.br       branch
 # git config --global mergetool.diffmerge.trustExitCode true
 
 # git config --global diff.tool               meld 
-# git config --global difftool.diffmerge.cmd  'meld "$LOCAL" "$REMOTE"'
+# git config --global difftool.meld.cmd  'meld "$LOCAL" "$REMOTE"'
 # git config --global merge.tool              meld
 
+# WARN: install command line tools first on MacOS, MUST use bcomp instead of bcompare
 git config --global diff.tool               bc3
-git config --global difftool.diffmerge.cmd  'bcompare "$LOCAL" "$REMOTE"'
+git config --global difftool.bc3.cmd  'bcomp "$LOCAL" "$REMOTE"'
 git config --global merge.tool              bc3
-git config --global mergetool.bc3.path      "/usr/bin/bcompare"
+git config --global mergetool.bc3.path      "/usr/local/bin/bcomp"
 
 git config --global alias.unstage 'reset HEAD --'
 git config --global alias.last    'log -1 HEAD'
 git config --global alias.diffall 'git-diffall'
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset \
+  -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+# git config --global alias.lgall "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 git config --global oh-my-zsh.hide-status 1
 git config --global oh-my-zsh.hide-dirty  1
+
 
