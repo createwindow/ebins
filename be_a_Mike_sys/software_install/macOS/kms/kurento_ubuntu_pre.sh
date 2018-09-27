@@ -40,6 +40,7 @@ freeglut3
 freeglut3-dev
 # opus
 libopus-dev 
+libgnutls-dev
 )
 
 sudo apt update
