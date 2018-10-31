@@ -434,6 +434,13 @@ Date：{\color{seco}\today}\\
 \RequirePackage{textcomp} % LATEX font encodings
 \RequirePackage[T1]{fontenc} % with textcomp, to display text symbols
 
+% Make the 1st line of all sections etc., be indented by the usual paragraph
+% indentation.
+\RequirePackage{indentfirst}
+
+% makes TeX less fussy about line breaking
+\sloppy
+
 \RequirePackage{makecell}
 \RequirePackage{lipsum}
 
@@ -505,3 +512,4 @@ Date：{\color{seco}\today}\\
 	showtabs=false,
 	captionpos=b
 }
+

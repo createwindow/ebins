@@ -22,7 +22,7 @@ usage()
     echo "Usage: $0 [OPTION]"
     echo "OPTION: -t, for test app (default option);"
     echo "        -p, for product app."
-    echo "        -s, using the stripped library."
+    echo "        -s, using the stripped library (default for release)."
     echo "        -d, for debug (default option)."
     echo "        -r, for release."
     echo "        -h, for help."
@@ -64,6 +64,7 @@ do
                 exit
             else
                 build="r"
+                strip="true"
             fi
         ;;
         s)  strip="true"
