@@ -21,7 +21,7 @@ git config --global alias.br       branch
 
 # WARN: install command line tools first on MacOS, MUST use bcomp instead of bcompare
 git config --global diff.tool               bc3
-git config --global difftool.bc3.cmd  'bcomp "$LOCAL" "$REMOTE"'
+git config --global difftool.bc3.cmd        'bcomp "$LOCAL" "$REMOTE"'
 git config --global merge.tool              bc3
 git config --global mergetool.bc3.path      "/usr/local/bin/bcomp"
 

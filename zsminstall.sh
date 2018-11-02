@@ -14,10 +14,11 @@ usage()
   echo "        -r, release."
   echo "        -s, StarMaker."
   echo "        -t, StarMakerLite."
+  echo "        -g, Sargam."
   echo "        -h, for help."
 }
 
-while getopts "drsth" option
+while getopts "drstgh" option
 do
   case $option in
     h) usage
@@ -31,13 +32,23 @@ do
     ;;
     r) dbg="no"
     ;;
-    s) if [ "$prd" = "starmakerlite" ]; then
+    s) if [ "$prd" = "starmakerlite" -o  "$prd" = "sargam" ]; then
         usage
         exit 1
       fi
       prd="starmaker"
     ;;
-    t) prd="starmakerlite"
+    t) if [ "$prd" = "sargam" ]; then
+        usage
+        exit 1
+      fi
+      prd="starmakerlite"
+    ;;
+    g) if [ "$prd" = "starmakerlite" ]; then
+        usage
+        exit 1
+      fi
+      prd="sargam"
     ;;
     ?) usage
        exit 1
@@ -61,6 +72,15 @@ elif [ "$prd" = "starmakerlite" -a "$dbg" = "no" ]; then
   echo "StarMakerLite ===> yes"
   echo "Release       ===> yes"
   app="$starmaker_dir/app/build/outputs/apk/thevoice/release/thevoiceRelease-minApi21-armeabi-v7a.apk"
+elif [ "$prd" = "sargam" -a "$dbg" = "yes" ]; then
+  echo "Sargam        ===> yes"
+  echo "Debug         ===> yes"
+  app="$starmaker_dir/app/build/outputs/apk/sargam/debug/sargamDebug-minApi21-armeabi-v7a.apk"
+elif [ "$prd" = "sargam" -a "$dbg" = "no" ]; then
+  echo "sargam        ===> yes"
+  echo "Release       ===> yes"
+  app="$starmaker_dir/app/build/outputs/apk/sargam/release/sargamRelease-minApi21-armeabi-v7a.apk"
+
 else
   usage
   exit
