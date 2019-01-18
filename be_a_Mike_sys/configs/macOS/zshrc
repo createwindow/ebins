@@ -37,7 +37,7 @@ $JAVA_HOME/bin:$ITEM2_ZMODEM_HOME:$PATH"
 
 export GYP_DEFINES="OS=ios target_arch=arm64"
 # export GYP_GENERATOR_FLAGS="xcode_project_version=9.4 xcode_ninja_target_pattern=All_iOS xcode_ninja_executable_target_pattern=AppRTCDemo|libjingle_peerconnection_unittest|libjingle_peerconnection_objc_test output_dir=out_ios64"
-export GYP_GENERATOR_FLAGS="xcode_project_version=9.4 xcode_ninja_target_pattern=All_iOS output_dir=out_ios64"
+export GYP_GENERATOR_FLAGS="xcode_project_version=10.1 xcode_ninja_target_pattern=All_iOS output_dir=out_ios64"
 export GYP_GENERATORS="ninja,xcode-ninja"
 
 # Path to your oh-my-zsh installation.
@@ -163,4 +163,5 @@ alias texstudio="/Applications/texstudio.app/Contents/MacOS/texstudio"
 alias wireshark="/Applications/Wireshark.app/Contents/MacOS/Wireshark"
 alias acrobat="/Applications/Adobe\ Acrobat\ DC/Adobe\ Acrobat.app/Contents/MacOS/AdobeAcrobat"
 alias sublime="/Applications/Sublime\ Text.app/Contents/MacOS/Sublime\ Text"
+alias gl3="git --no-pager log -n3"
 

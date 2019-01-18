@@ -59,27 +59,27 @@ done
 if [ "$prd" = "starmaker" -a "$dbg" = "yes" ]; then
   echo "StarMaker     ===> yes"
   echo "Debug         ===> yes"
-  app="$starmaker_dir/app/build/outputs/apk/product/debug/productDebug-minApi21-armeabi-v7a.apk"
+  app="$starmaker_dir/app/build/outputs/apk/starmaker/debug/productDebug-minApi21-armeabi-v7a*.apk"
 elif [ "$prd" = "starmaker" -a "$dbg" = "no" ]; then
   echo "StarMaker     ===> yes"
   echo "Release       ===> yes"
-  app="$starmaker_dir/app/build/outputs/apk/product/release/productRelease-minApi21-armeabi-v7a.apk"
+  app="$starmaker_dir/app/build/outputs/apk/starmaker/release/productRelease-minApi21-armeabi-v7a*.apk"
 elif [ "$prd" = "starmakerlite" -a "$dbg" = "yes" ]; then
   echo "StarMakerLite ===> yes"
   echo "Debug         ===> yes"
-  app="$starmaker_dir/app/build/outputs/apk/thevoice/debug/thevoiceDebug-minApi21-armeabi-v7a.apk"
+  app="$starmaker_dir/app/build/outputs/apk/thevoice/debug/thevoiceDebug-minApi21-armeabi-v7a*.apk"
 elif [ "$prd" = "starmakerlite" -a "$dbg" = "no" ]; then
   echo "StarMakerLite ===> yes"
   echo "Release       ===> yes"
-  app="$starmaker_dir/app/build/outputs/apk/thevoice/release/thevoiceRelease-minApi21-armeabi-v7a.apk"
+  app="$starmaker_dir/app/build/outputs/apk/thevoice/release/thevoiceRelease-minApi21-armeabi-v7a*.apk"
 elif [ "$prd" = "sargam" -a "$dbg" = "yes" ]; then
   echo "Sargam        ===> yes"
   echo "Debug         ===> yes"
-  app="$starmaker_dir/app/build/outputs/apk/sargam/debug/sargamDebug-minApi21-armeabi-v7a.apk"
+  app="$starmaker_dir/app/build/outputs/apk/sargam/debug/sargamDebug-minApi21-armeabi-v7a*.apk"
 elif [ "$prd" = "sargam" -a "$dbg" = "no" ]; then
   echo "sargam        ===> yes"
   echo "Release       ===> yes"
-  app="$starmaker_dir/app/build/outputs/apk/sargam/release/sargamRelease-minApi21-armeabi-v7a.apk"
+  app="$starmaker_dir/app/build/outputs/apk/sargam/release/sargamRelease-minApi21-armeabi-v7a*.apk"
 
 else
   usage

@@ -59,27 +59,32 @@ if [ "$prd" = "starmaker" -a "$dbg" = "yes" ]; then
   echo "StarMaker     ===> yes"
   echo "Debug         ===> yes"
   arg="aPD"
+  rm  "$starmaker_dir/app/build/outputs/apk/starmaker/debug/*.apk"
 elif [ "$prd" = "starmaker" -a "$dbg" = "no" ]; then
   echo "StarMaker     ===> yes"
   echo "Release       ===> yes"
   arg="aPR"
+  rm  "$starmaker_dir/app/build/outputs/apk/starmaker/release/*.apk"
 elif [ "$prd" = "starmakerlite" -a "$dbg" = "yes" ]; then
   echo "StarMakerLite ===> yes"
   echo "Debug         ===> yes"
   arg="aTD"
+  rm  "$starmaker_dir/app/build/outputs/apk/thevoice/debug/*.apk"
 elif [ "$prd" = "starmakerlite" -a "$dbg" = "no" ]; then
   echo "StarMakerLite ===> yes"
   echo "Release       ===> yes"
   arg="aTR"
+  rm  "$starmaker_dir/app/build/outputs/apk/thevoice/release/*.apk"
 elif [ "$prd" = "sargam" -a "$dbg" = "yes" ]; then
   echo "sargam        ===> yes"
   echo "Debug         ===> yes"
   arg="assembleSargamDebug"
+  rm  "$starmaker_dir/app/build/outputs/apk/sargam/debug/*.apk"
 elif [ "$prd" = "sargam" -a "$dbg" = "no" ]; then
   echo "sargam        ===> yes"
   echo "Release       ===> yes"
-  arg="assembleSargamDebug"
-
+  arg="assembleSargamRelease"
+  rm  "$starmaker_dir/app/build/outputs/apk/sargam/release/*.apk"
 else
   usage
   exit

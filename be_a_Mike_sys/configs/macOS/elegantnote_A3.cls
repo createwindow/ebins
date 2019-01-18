@@ -1,9 +1,9 @@
-%% start of file `elegantnote.cls'.
+%% start of file `elegantnote_A3.cls'.
 %% Copyright 2013-2019 ddswhu (ddswhu@gmail.com).
 %
 % % !Mode:: "TeX:UTF-8"
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{elegantnote}[2013/07/18 v1.00 elegant note document class]
+\ProvidesClass{elegantnote_A3}[2013/07/18 v1.00 elegant note document class]
 
 \RequirePackage{color,xcolor}
 
@@ -55,7 +55,7 @@
 
 \ProcessOptions\relax
 
-\LoadClass[12pt,a4paper,openany]{book}
+\LoadClass[12pt,a3paper,openany]{book}
 
 
 \newtoks\zhtitle
@@ -122,7 +122,7 @@
  
 \RequirePackage{geometry}
 \geometry{
-    a4paper,
+   a3paper,
    left=27mm,  %% or inner=23mm
    right=27mm, %% or outer=18mm
    top=25.4mm, bottom=25.4mm,
