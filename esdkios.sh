@@ -2,19 +2,15 @@
 
 # set -x
 
-# sdk_so="libjingle_peerconnection_so.so"
-# sdk_jar="libjingle_peerconnection_java.jar"
-sdk_so="libzorro.so"
-sdk_jar="libzorro.jar"
+sdk_framework="ZorroRtcEngineKit.framework"
+sdk_dsym="ZorroRtcEngineKit.framework.dSYM"
 
-webrtc_51_home="/Volumes/espace/shared_vagrant/rtc_android_51/src"
-webrtc_home="$webrtc_51_home"
+# webrtc_71_home="$HOME/mywork/rtc_ios_71/src"
+webrtc_71_home="/Volumes/Samsung_T5/rtc_ios_71/src"
+webrtc_home="$webrtc_71_home"
 
-dir_out_rls="$webrtc_home/out/Release"
-dir_out_dbg="$webrtc_home/out/Debug"
-dir_so_in_webrtc_unstripped="lib"
-dir_so_in_webrtc_stripped="lib/stripped"
-dir_jar_in_webrtc="lib.java"
+dir_out_rls="$webrtc_home/out/release"
+dir_out_dbg="$webrtc_home/out/debug"
 
 usage()
 {
@@ -22,13 +18,12 @@ usage()
     echo "Usage: $0 [OPTION]"
     echo "OPTION: -t, for test app (default option);"
     echo "        -p, for product app."
-    echo "        -s, using the stripped library (default for release)."
     echo "        -d, for debug (default option)."
     echo "        -r, for release."
     echo "        -h, for help."
 }
 
-while getopts "tpsdr" option
+while getopts "tpdr" option
 do
     case $option in
         h)  usage
@@ -67,8 +62,6 @@ do
                 strip="true"
             fi
         ;;
-        s)  strip="true"
-        ;;
         ?)  usage
             exit 1
         ;;
@@ -83,10 +76,6 @@ if [ "$build" = "" ]; then
     build="d"
 fi
 
-if [ "$strip" = "" ]; then
-    strip="false"
-fi
-
 printf -- '\n\033[35mfor_app=%s build=%s strip=%s \033[0m \n\n' $for_app $build $strip;
 
 if [ $build = "r" ]; then
@@ -95,37 +84,31 @@ else
     dir_out=$dir_out_dbg
 fi
 
-src_jar="$dir_out/$dir_jar_in_webrtc/$sdk_jar"
-
-if [ "$strip" = "true" ]; then
-  src_so="$dir_out/$dir_so_in_webrtc_stripped/$sdk_so"
-else
-  src_so="$dir_out/$dir_so_in_webrtc_unstripped/$sdk_so"
-fi
+src_framework="$dir_out/$sdk_framework"
+src_dsym="$dir_out/$sdk_dsym"
 
 if [ $for_app = "t" ]; then
 # ================== TEST APP ===================
-# client_app="$HOME/mywork/ushow/rtc_android_client"
-client_app="/Volumes/Samsung_T5/rtc_android_client"
-dir_so_in_app="app/src/main/libs/armeabi-v7a"
-dir_jar_in_app="app/libs"
+client_app="$HOME/mywork/rtc_ios_client"
+dir_framework_in_app="WebRTCDemo/3rdparty"
+dir_dsym_in_app="$dir_framework_in_app"
 # ================== TEST APP ===================
 elif [ $for_app = "p" ]; then
 # ================== StarMaker APP ===================
-# client_app="$HOME/mywork/ushow/starmaker-android-client"
-client_app="/Volumes/Samsung_T5/starmaker-android-client"
-dir_so_in_app="libraries/mediacore/src/main/libs/armeabi-v7a"
-dir_jar_in_app="libraries/mediacore/libs"
+client_app="/Volumes/Samsung_T5/starmaker-ios-client"
+dir_framework_in_app="StarMaker/Feature/GiftService/ThirdParty/zorro"
+dir_dsym_in_app="$dir_framework_in_app"
 # ================== StarMaker APP ===================
 fi
 
+dst_framework="$client_app/$dir_framework_in_app"
+dst_dsym="$client_app/$dir_dsym_in_app"
 
-dst_so="$client_app/$dir_so_in_app"
-dst_jar="$client_app/$dir_jar_in_app"
+rm -rf $dst_framework/sdk_framework
+echo "$src_framework ---> $dst_framework ..."
+cp -R $src_framework      $dst_framework
 
-echo "$src_so ---> $dst_so ..."
-cp    $src_so      $dst_so 
-
-echo "$src_jar ---> $dst_jar ..."
-cp    $src_jar      $dst_jar
+rm -rf $dst_dsym/$sdk_dsym
+echo "$src_dsym ---> $dst_dsym ..."
+cp -R $src_dsym      $dst_dsym
 

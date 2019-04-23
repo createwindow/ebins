@@ -3,7 +3,8 @@
 dbg="yes"
 prd="starmaker"
 arg=""
-starmaker_dir="/Users/guoyi/mywork/ushow/starmaker-android-client"
+# starmaker_dir="/Users/guoyi/mywork/ushow/starmaker-android-client"
+starmaker_dir="/Volumes/Samsung_T5/starmaker-android-client"
 
 usage()
 {
@@ -59,12 +60,12 @@ if [ "$prd" = "starmaker" -a "$dbg" = "yes" ]; then
   echo "StarMaker     ===> yes"
   echo "Debug         ===> yes"
   arg="aPD"
-  rm  "$starmaker_dir/app/build/outputs/apk/starmaker/debug/*.apk"
+  rm -f "$starmaker_dir/app/build/outputs/apk/product/debug/*.apk"
 elif [ "$prd" = "starmaker" -a "$dbg" = "no" ]; then
   echo "StarMaker     ===> yes"
   echo "Release       ===> yes"
   arg="aPR"
-  rm  "$starmaker_dir/app/build/outputs/apk/starmaker/release/*.apk"
+  rm  "$starmaker_dir/app/build/outputs/apk/product/release/*.apk"
 elif [ "$prd" = "starmakerlite" -a "$dbg" = "yes" ]; then
   echo "StarMakerLite ===> yes"
   echo "Debug         ===> yes"

@@ -163,5 +163,5 @@ alias texstudio="/Applications/texstudio.app/Contents/MacOS/texstudio"
 alias wireshark="/Applications/Wireshark.app/Contents/MacOS/Wireshark"
 alias acrobat="/Applications/Adobe\ Acrobat\ DC/Adobe\ Acrobat.app/Contents/MacOS/AdobeAcrobat"
 alias sublime="/Applications/Sublime\ Text.app/Contents/MacOS/Sublime\ Text"
-alias gl3="git --no-pager log -n3"
+alias gl5="git --no-pager log -n5"
 
