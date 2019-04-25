@@ -153,6 +153,7 @@ alias ag="ag --depth -1"
 alias myvim="mvim ~/.vim/vimrc"
 alias myvimmore="mvim ~/.vim/vimrc_more"
 alias myzsh="mvim ~/.zshrc"
+# alias mtr="/usr/local/sbin/mtr" # not work
 # alias ssh22="sshpass -p 'frst.dxt' ssh admin@118.144.248.22 -p 22"
 
 alias studio="/Applications/Android\ Studio.app/Contents/MacOS/studio"
