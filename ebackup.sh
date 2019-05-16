@@ -29,10 +29,10 @@ elif [ "$1" = "-u" ]; then
     if [ ! -d "$DST_DIR_SW_INSTALL/macOS" ]; then 
         mkdir $DST_DIR_SW_INSTALL/macOS
     fi
-    cp /Volumes/espace/shared_vagrant/zkurento_install.sh $DST_DIR_SW_INSTALL/kms
-    cp /Volumes/espace/shared_vagrant/kurento_install.sh  $DST_DIR_SW_INSTALL/kms
-    cp /Volumes/espace/shared_vagrant/zorro-mcu/mcu_server/kms-omni-build/build-debug/zkms.sh \
-      $DST_DIR_SW_INSTALL/kms
+    # cp /Volumes/espace/shared_vagrant/zkurento_install.sh $DST_DIR_SW_INSTALL/kms
+    # cp /Volumes/espace/shared_vagrant/kurento_install.sh  $DST_DIR_SW_INSTALL/kms
+    # cp /Volumes/espace/shared_vagrant/zorro-mcu/mcu_server/kms-omni-build/build-debug/zkms.sh \
+      # $DST_DIR_SW_INSTALL/kms
 else
     usage
     exit

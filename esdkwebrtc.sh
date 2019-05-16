@@ -6,8 +6,10 @@
 # sdk_jar="libjingle_peerconnection_java.jar"
 sdk_so="libzorro.so"
 sdk_jar="libzorro.jar"
+sdk_aar="zorro_sdk.aar"
 
-webrtc_51_home="/Volumes/espace/shared_vagrant/rtc_android_51/src"
+# webrtc_51_home="/Volumes/espace/shared_vagrant/rtc_android_51/src"
+webrtc_51_home="/Volumes/Samsung_T5/shared_vagrant/rtc_android_51/src"
 webrtc_home="$webrtc_51_home"
 
 dir_out_rls="$webrtc_home/out/Release"
@@ -15,6 +17,7 @@ dir_out_dbg="$webrtc_home/out/Debug"
 dir_so_in_webrtc_unstripped="lib"
 dir_so_in_webrtc_stripped="lib/stripped"
 dir_jar_in_webrtc="lib.java"
+dir_aar_in_webrtc="zorro_aar"
 
 usage()
 {
@@ -96,6 +99,7 @@ else
 fi
 
 src_jar="$dir_out/$dir_jar_in_webrtc/$sdk_jar"
+src_aar="$dir_out/$dir_aar_in_webrtc/$sdk_aar"
 
 if [ "$strip" = "true" ]; then
   src_so="$dir_out/$dir_so_in_webrtc_stripped/$sdk_so"
@@ -109,6 +113,7 @@ if [ $for_app = "t" ]; then
 client_app="/Volumes/Samsung_T5/rtc_android_client"
 dir_so_in_app="app/src/main/libs/armeabi-v7a"
 dir_jar_in_app="app/libs"
+dir_aar_in_app="app/libs"
 # ================== TEST APP ===================
 elif [ $for_app = "p" ]; then
 # ================== StarMaker APP ===================
@@ -122,10 +127,13 @@ fi
 
 dst_so="$client_app/$dir_so_in_app"
 dst_jar="$client_app/$dir_jar_in_app"
+dst_aar="$client_app/$dir_aar_in_app"
 
-echo "$src_so ---> $dst_so ..."
-cp    $src_so      $dst_so 
+# echo "$src_so ---> $dst_so ..."
+# cp    $src_so      $dst_so 
 
-echo "$src_jar ---> $dst_jar ..."
-cp    $src_jar      $dst_jar
+# echo "$src_jar ---> $dst_jar ..."
+# cp    $src_jar      $dst_jar
 
+echo "$src_aar ---> $dst_aar ..."
+cp    $src_aar      $dst_aar

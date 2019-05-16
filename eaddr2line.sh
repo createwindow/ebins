@@ -7,8 +7,10 @@ prebuilt/darwin-x86_64/bin/arm-linux-androideabi-addr2line"
 ndk_stack="$HOME/Library/Android/sdk/ndk-bundle//prebuilt/darwin-x86_64/bin/ndk-stack"
 
 so_name="libzorro.so"
-so_dir_debug="/Volumes/espace/shared_vagrant/rtc_android_51/src/out/Debug/lib"
-so_dir_release="/Volumes/espace/shared_vagrant/rtc_android_51/src/out/Release/lib"
+# so_dir_debug="/Volumes/espace/shared_vagrant/rtc_android_51/src/out/Debug/lib"
+# so_dir_release="/Volumes/espace/shared_vagrant/rtc_android_51/src/out/Release/lib"
+so_dir_debug="/Volumes/Samsung_T5/shared_vagrant/rtc_android_51/src/out/Debug/lib"
+so_dir_release="/Volumes/Samsung_T5/shared_vagrant/rtc_android_51/src/out/Release/lib"
 so_debug="$so_dir_debug"/"$so_name"
 so_release="$so_dir_release"/"$so_name"
 
