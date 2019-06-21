@@ -93,4 +93,5 @@ fi
 
 cd $starmaker_dir
 ./gradlew "$arg" -PfastBuild
+# ./gradlew "$arg" -PminApi17
 

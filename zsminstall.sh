@@ -15,14 +15,17 @@ usage()
   echo "        -s, StarMaker."
   echo "        -t, StarMakerLite."
   echo "        -g, Sargam."
+  echo "        -m, arm64."
   echo "        -h, for help."
 }
 
-while getopts "drstgh" option
+while getopts "drstgmh" option
 do
   case $option in
     h) usage
         exit 
+    ;;
+    m) arm64="yes"
     ;;
     d) if [ "$dbg" = "no" ]; then
         usage
@@ -60,27 +63,44 @@ if [ "$prd" = "starmaker" -a "$dbg" = "yes" ]; then
   echo "StarMaker     ===> yes"
   echo "Debug         ===> yes"
   app="$starmaker_dir/app/build/outputs/apk/product/debug/productDebug-minApi21-armeabi-v7a.apk"
+  if [ "$arm64" = "yes" ]; then
+    app="$starmaker_dir/app/build/outputs/apk/product/debug/productDebug-minApi21-arm64-v8a.apk"
+  fi
 elif [ "$prd" = "starmaker" -a "$dbg" = "no" ]; then
   echo "StarMaker     ===> yes"
   echo "Release       ===> yes"
   app="$starmaker_dir/app/build/outputs/apk/product/release/productRelease-minApi21-armeabi-v7a.apk"
+  if [ "$arm64" = "yes" ]; then
+    app="$starmaker_dir/app/build/outputs/apk/product/release/productRelease-minApi21-arm64-v8a.apk"
+  fi
 elif [ "$prd" = "starmakerlite" -a "$dbg" = "yes" ]; then
   echo "StarMakerLite ===> yes"
   echo "Debug         ===> yes"
   app="$starmaker_dir/app/build/outputs/apk/thevoice/debug/thevoiceDebug-minApi21-armeabi-v7a.apk"
+  if [ "$arm64" = "yes" ]; then
+    app="$starmaker_dir/app/build/outputs/apk/thevoice/debug/thevoiceDebug-minApi21-arm64-v8a.apk"
+  fi
 elif [ "$prd" = "starmakerlite" -a "$dbg" = "no" ]; then
   echo "StarMakerLite ===> yes"
   echo "Release       ===> yes"
   app="$starmaker_dir/app/build/outputs/apk/thevoice/release/thevoiceRelease-minApi21-armeabi-v7a.apk"
+  if [ "$arm64" = "yes" ]; then
+    app="$starmaker_dir/app/build/outputs/apk/thevoice/release/thevoiceRelease-minApi21-arm64-v8a.apk"
+  fi
 elif [ "$prd" = "sargam" -a "$dbg" = "yes" ]; then
   echo "Sargam        ===> yes"
   echo "Debug         ===> yes"
   app="$starmaker_dir/app/build/outputs/apk/sargam/debug/sargamDebug-minApi21-armeabi-v7a.apk"
+  if [ "$arm64" = "yes" ]; then
+    app="$starmaker_dir/app/build/outputs/apk/sargam/debug/sargamDebug-minApi21-arm64-v8a.apk"
+  fi
 elif [ "$prd" = "sargam" -a "$dbg" = "no" ]; then
   echo "sargam        ===> yes"
   echo "Release       ===> yes"
   app="$starmaker_dir/app/build/outputs/apk/sargam/release/sargamRelease-minApi21-armeabi-v7a.apk"
-
+  if [ "$arm64" = "yes" ]; then
+    app="$starmaker_dir/app/build/outputs/apk/sargam/release/sargamRelease-minApi21-arm64-v8a.apk"
+  fi
 else
   usage
   exit

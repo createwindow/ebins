@@ -14,6 +14,7 @@ webrtc_home="$webrtc_51_home"
 
 dir_out_rls="$webrtc_home/out/Release"
 dir_out_dbg="$webrtc_home/out/Debug"
+dir_out_aar="$webrtc_home/out"
 dir_so_in_webrtc_unstripped="lib"
 dir_so_in_webrtc_stripped="lib/stripped"
 dir_jar_in_webrtc="lib.java"
@@ -99,7 +100,8 @@ else
 fi
 
 src_jar="$dir_out/$dir_jar_in_webrtc/$sdk_jar"
-src_aar="$dir_out/$dir_aar_in_webrtc/$sdk_aar"
+# src_aar="$dir_out/$dir_aar_in_webrtc/$sdk_aar"
+src_aar="$dir_out_aar/$dir_aar_in_webrtc/$sdk_aar"
 
 if [ "$strip" = "true" ]; then
   src_so="$dir_out/$dir_so_in_webrtc_stripped/$sdk_so"
@@ -121,6 +123,7 @@ elif [ $for_app = "p" ]; then
 client_app="/Volumes/Samsung_T5/starmaker-android-client"
 dir_so_in_app="libraries/mediacore/src/main/libs/armeabi-v7a"
 dir_jar_in_app="libraries/mediacore/libs"
+dir_aar_in_app="libraries/aars"
 # ================== StarMaker APP ===================
 fi
 
