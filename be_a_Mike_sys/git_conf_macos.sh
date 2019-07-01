@@ -27,3 +27,7 @@ git config --global mergetool.bc3.path      "/Applications/Beyond Compare.app/Co
 git config --global alias.unstage 'reset HEAD --'
 git config --global alias.last    'log -1 HEAD'
 git config --global alias.diffall 'git-diffall'
+
+git config --global --add oh-my-zsh.hide-dirty 1
+git config --global --add oh-my-zsh.hide-status 0
+

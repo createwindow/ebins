@@ -176,19 +176,19 @@
 \defaultfontfeatures{Mapping=tex-text} 
 \RequirePackage{xunicode}
 \RequirePackage{xltxtra} 
-\setmainfont[Ligatures=TeX]{Minion Pro} %  (\textrm)
-\setsansfont{Myriad Pro} %  (\textsf)
-\setmonofont{Adobe Garamond Pro}%Palatino Linotype
+% \setmainfont[Ligatures=TeX]{Minion Pro} %  (\textrm)
+% \setsansfont{Myriad Pro} %  (\textsf)
+% \setmonofont{Adobe Garamond Pro}%Palatino Linotype
 %-中文字体设置-%
 \RequirePackage{xeCJK}
 %\setCJKmainfont[BoldFont={黑体},ItalicFont={楷体}]{华文中宋}%方正书宋_GBK Adobe Song Std L
-\setCJKmainfont[BoldFont={黑体-简},ItalicFont={楷体-简}]{华文中宋}%方正书宋_GBK Adobe Song Std L
-\setCJKsansfont[BoldFont={黑体-简}]{方正中等线简体}
-\setCJKmonofont{方正启体简体}
+\setCJKmainfont[BoldFont={黑体-简},ItalicFont={楷体-简}]{华文宋体}%方正书宋_GBK Adobe Song Std L
+\setCJKsansfont[BoldFont={黑体-简}]{华文宋体}
+\setCJKmonofont{华文宋体}
 \XeTeXlinebreaklocale "zh"
 \XeTeXlinebreakskip = 0pt plus 1pt
 
-\setCJKfamilyfont{new}{方正苏新诗柳楷简体}
+\setCJKfamilyfont{new}{华文宋体}
 
 %% 定理\引理\定义样式设置
 \RequirePackage{environ}
