@@ -1,6 +1,7 @@
 #!/bin/bash
 
-DST_DIR="$HOME/Downloads/vmshared/logcat"
+# DST_DIR="$HOME/Downloads/vmshared/logcat"
+DST_DIR="$HOME/workspace/sublime_proj/logcat"
 TIME_STAMP=`date +"%Y%m%d_%H%M%S"`
 FILE=logcat_$TIME_STAMP.txt
 FILE_DEF=log.txt

@@ -16,10 +16,11 @@ usage()
   echo "        -t, StarMakerLite."
   echo "        -g, Sargam."
   echo "        -m, arm64."
+  echo "        -p, just show apk dir."
   echo "        -h, for help."
 }
 
-while getopts "drstgmh" option
+while getopts "drstgmph" option
 do
   case $option in
     h) usage
@@ -52,6 +53,8 @@ do
         exit 1
       fi
       prd="sargam"
+    ;;
+    p) only_position="yes"
     ;;
     ?) usage
        exit 1
@@ -108,6 +111,9 @@ fi
 
 echo "API           ===> 21"
 echo "ARM           ===> v7"
-adb install -r $app
+echo "$app"
+if [ !"only_position" = "yes" ]; then
+  adb install -r $app
+fi
 
 # adb install -r ./app/build/outputs/apk/product/debug/productDebug-minApi17-armeabi-v7a.apk
