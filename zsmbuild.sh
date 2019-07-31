@@ -92,6 +92,6 @@ else
 fi
 
 cd $starmaker_dir
-# ./gradlew "$arg" -PfastBuild
-./gradlew "$arg" -PminApi17
+./gradlew "$arg" -PfastBuild
+# ./gradlew "$arg" -PminApi17
 

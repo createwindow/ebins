@@ -112,7 +112,7 @@ fi
 echo "API           ===> 21"
 echo "ARM           ===> v7"
 echo "$app"
-if [ !"only_position" = "yes" ]; then
+if [ ! "$only_position" = "yes" ]; then
   adb install -r $app
 fi
 
