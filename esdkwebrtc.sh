@@ -6,11 +6,14 @@
 # sdk_jar="libjingle_peerconnection_java.jar"
 sdk_so="libzorro.so"
 sdk_jar="libzorro.jar"
-sdk_aar="zorro_sdk.aar"
+# sdk_aar="zorro_sdk.aar"
+sdk_aar="zorro-rtc-sdk.aar"
 
 # webrtc_51_home="/Volumes/espace/shared_vagrant/rtc_android_51/src"
-webrtc_51_home="/Volumes/Samsung_T5/shared_vagrant/rtc_android_51/src"
-webrtc_home="$webrtc_51_home"
+# webrtc_51_home="/Volumes/Samsung_T5/shared_vagrant/rtc_android_51/src"
+# webrtc_home="$webrtc_51_home"
+webrtc_72_home="/Volumes/Samsung_T5/shared_vagrant/rtc_android_72/src"
+webrtc_home="$webrtc_72_home"
 
 dir_out_rls="$webrtc_home/out/Release"
 dir_out_dbg="$webrtc_home/out/Debug"
@@ -101,7 +104,7 @@ fi
 
 src_jar="$dir_out/$dir_jar_in_webrtc/$sdk_jar"
 # src_aar="$dir_out/$dir_aar_in_webrtc/$sdk_aar"
-src_aar="$dir_out_aar/$dir_aar_in_webrtc/$sdk_aar"
+src_aar="$webrtc_72_home/$sdk_aar"
 
 if [ "$strip" = "true" ]; then
   src_so="$dir_out/$dir_so_in_webrtc_stripped/$sdk_so"
@@ -112,7 +115,7 @@ fi
 if [ $for_app = "t" ]; then
 # ================== TEST APP ===================
 # client_app="$HOME/mywork/ushow/rtc_android_client"
-client_app="/Volumes/Samsung_T5/rtc_android_client"
+client_app="/Volumes/Samsung_T5/rtc_android_client_new"
 dir_so_in_app="app/src/main/libs/armeabi-v7a"
 dir_jar_in_app="app/libs"
 dir_aar_in_app="app/libs"
