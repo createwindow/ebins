@@ -89,13 +89,13 @@ src_dsym="$dir_out/$sdk_dsym"
 
 if [ $for_app = "t" ]; then
 # ================== TEST APP ===================
-client_app="$HOME/mywork/rtc_ios_client"
+client_app="/Volumes/Samsung_T5/rtc_ios_client"
 dir_framework_in_app="WebRTCDemo/3rdparty"
 dir_dsym_in_app="$dir_framework_in_app"
 # ================== TEST APP ===================
 elif [ $for_app = "p" ]; then
 # ================== StarMaker APP ===================
-client_app="/Volumes/Samsung_T5/starmaker-ios-client"
+client_app="$HOME/workspace/code/ushow/starmaker-ios-client"
 dir_framework_in_app="StarMaker/Feature/GiftService/ThirdParty/zorro"
 dir_dsym_in_app="$dir_framework_in_app"
 # ================== StarMaker APP ===================

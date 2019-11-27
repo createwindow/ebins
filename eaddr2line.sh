@@ -4,6 +4,8 @@
 
 addr2line="$HOME/Library/Android/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/\
 prebuilt/darwin-x86_64/bin/arm-linux-androideabi-addr2line"
+addr2line_arm64="$HOME/Library/Android/sdk/ndk-bundle/toolchains/aarch64-linux-android-4.9/\
+/prebuilt/darwin-x86_64/bin/aarch64-linux-android-addr2line"
 ndk_stack="$HOME/Library/Android/sdk/ndk-bundle//prebuilt/darwin-x86_64/bin/ndk-stack"
 
 # so_name="libzorro.so"
@@ -12,11 +14,15 @@ ndk_stack="$HOME/Library/Android/sdk/ndk-bundle//prebuilt/darwin-x86_64/bin/ndk-
 # so_dir_debug="/Volumes/Samsung_T5/shared_vagrant/rtc_android_51/src/out/Debug/lib"
 # so_dir_release="/Volumes/Samsung_T5/shared_vagrant/rtc_android_51/src/out/Release/lib"
 
-so_name="libjingle_peerconnection_so.so"
-so_dir_debug="/Volumes/Samsung_T5/shared_vagrant/rtc_android_72/src/out/debug/armeabi-v7a/lib.unstripped"
-so_dir_release="/Volumes/Samsung_T5/shared_vagrant/rtc_android_72/src/out/release/armeabi-v7a/lib.unstripped"
-so_debug="$so_dir_debug"/"$so_name"
-so_release="$so_dir_release"/"$so_name"
+so_name="libzorro.so"
+so_dir_debug_arm32="/Volumes/shared_vagrant/rtc_android_72/src/out/debug/armeabi-v7a/lib.unstripped"
+so_dir_release_arm32="/Volumes/shared_vagrant/rtc_android_72/src/out/release/armeabi-v7a/lib.unstripped"
+so_debug_arm32="$so_dir_debug_arm32"/"$so_name"
+so_release_arm32="$so_dir_release_arm32"/"$so_name"
+so_dir_debug_arm64="/Volumes/shared_vagrant/rtc_android_72/src/out/debug/arm64-v8a/lib.unstripped"
+so_dir_release_arm64="/Volumes/shared_vagrant/rtc_android_72/src/out/release/arm64-v8a/lib.unstripped"
+so_debug_arm64="$so_dir_debug_arm64"/"$so_name"
+so_release_arm64="$so_dir_release_arm64"/"$so_name"
 
 usage()
 {
@@ -26,23 +32,25 @@ usage()
   echo "        -f, file input for ndk-stack (if -n is enabled)."
   echo "        -d, for debug (default option)."
   echo "        -r, for release."
+  echo "        -6, for arch arm64."
   echo "        -h, for help."
   echo "EXAMPLE:" 
   echo "         $0 -d -n" 
   echo "         $0 -d -n -f xxx.logcat" 
   echo "         $0 0x11 0x22" 
   echo "         $0 -r 0x11 0x22" 
+  echo "         $0 -r -8 0x11 0x22" 
 }
 
 arg_num=0
-while getopts "nfdrh" option
+while getopts "nfdr6h" option
 do
   case $option in
     h) usage
-        exit 
+        exit
     ;;
     n) use_ndk_stack="true"
-       let arg_num=arg_num+1 
+       let arg_num=arg_num+1
     ;;
     f) if [ ! "$use_ndk_stack" = "true" ]; then
          echo "Invalid option: f"
@@ -50,7 +58,7 @@ do
          exit
        else
          ndk_stack_dump="true"
-         let arg_num=arg_num+1 
+         let arg_num=arg_num+1
        fi
     ;;
     d) if [ "$build" = "r" ]; then
@@ -59,7 +67,7 @@ do
          exit
        else
          build="d"
-         let arg_num=arg_num+1 
+         let arg_num=arg_num+1
        fi
     ;;
     r) if [ "$build" = "d" ]; then
@@ -68,8 +76,12 @@ do
          exit
        else
          build="r"
-         let arg_num=arg_num+1 
+         let arg_num=arg_num+1
        fi
+    ;;
+    6) arch="arm64"
+        addr2line="$addr2line_arm64"
+        let arg_num=arg_num+1
     ;;
     ?) usage
        exit 1
@@ -81,6 +93,10 @@ if [ "$build" = "" ]; then
   build="d"
 fi
 
+if [ "$arch" = "" ]; then
+  arch="arm32"
+fi
+
 if [ "$use_ndk_stack" = "" ]; then
   use_ndk_stack="false"
 fi
@@ -90,11 +106,21 @@ if  [ "$ndk_stack_dump" = "" ]; then
 fi
 
 if [ "$build" = "d" ]; then
-  so_dir="$so_dir_debug"
-  so="$so_debug"
+  if [ "$arch" = "arm32" ]; then
+    so_dir="$so_dir_debug_arm32"
+    so="$so_debug_arm32"
+  else
+    so_dir="$so_dir_debug_arm64"
+    so="$so_debug_arm64"
+  fi
 else
-  so_dir="$so_dir_release"
-  so="$so_release"
+  if [ "$arch" = "arm32" ]; then
+    so_dir="$so_dir_release_arm32"
+    so="$so_release_arm32"
+  else
+    so_dir="$so_dir_release_arm64"
+    so="$so_release_arm64"
+  fi
 fi
 
 if [ "$use_ndk_stack" = "true" ]; then

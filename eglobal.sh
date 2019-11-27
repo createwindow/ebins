@@ -120,14 +120,15 @@ excluded_dirs_webrtc_android_71_l1='
   # -E testing
   # -E '*_unittest*'
 
-# excluded_dirs=$excluded_dirs_webrtc_android_51
 if [ "$1" = "51" ]; then
   excluded_dirs=$excluded_dirs_webrtc_android_51_l1
 elif [ "$1" = "71" ]; then
   excluded_dirs=$excluded_dirs_webrtc_android_71_l1
 else
-  usage
-  exit
+  excluded_dirs=$excluded_dirs_webrtc_android_71_l1
+  echo "Generating for Android 72 ..."
+  # usage
+  # exit
 fi
 
 if [ -d "$DEST_DIR" ]; then

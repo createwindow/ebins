@@ -141,6 +141,8 @@ source $ZSH/oh-my-zsh.sh
 
 # autojump
 [[ -s /usr/local/etc/profile.d/autojump.sh ]] && source /usr/local/etc/profile.d/autojump.sh
+# Fix <Tab> not popup any suggestions
+autoload -U compinit && compinit
 
 #enables colorin the terminal bash shell export
 export CLICOLOR=1

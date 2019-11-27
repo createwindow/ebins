@@ -12,7 +12,8 @@ sdk_aar="zorro-rtc-sdk.aar"
 # webrtc_51_home="/Volumes/espace/shared_vagrant/rtc_android_51/src"
 # webrtc_51_home="/Volumes/Samsung_T5/shared_vagrant/rtc_android_51/src"
 # webrtc_home="$webrtc_51_home"
-webrtc_72_home="/Volumes/Samsung_T5/shared_vagrant/rtc_android_72/src"
+# webrtc_72_home="/Volumes/Samsung_T5/shared_vagrant/rtc_android_72/src"
+webrtc_72_home="/Volumes/shared_vagrant/rtc_android_72/src"
 webrtc_home="$webrtc_72_home"
 
 dir_out_rls="$webrtc_home/out/Release"
@@ -115,7 +116,7 @@ fi
 if [ $for_app = "t" ]; then
 # ================== TEST APP ===================
 # client_app="$HOME/mywork/ushow/rtc_android_client"
-client_app="/Volumes/Samsung_T5/rtc_android_client_new"
+client_app="/Volumes/Samsung_T5/rtc_android_client"
 dir_so_in_app="app/src/main/libs/armeabi-v7a"
 dir_jar_in_app="app/libs"
 dir_aar_in_app="app/libs"

@@ -3,7 +3,7 @@
 # DST_DIR="$HOME/Downloads/vmshared/logcat"
 DST_DIR="$HOME/workspace/sublime_proj/logcat"
 TIME_STAMP=`date +"%Y%m%d_%H%M%S"`
-FILE=logcat_$TIME_STAMP.txt
+FILE=logcat_$TIME_STAMP.log
 FILE_DEF=log.txt
 
 if [ ! -d "$DST_DIR" ]; then
