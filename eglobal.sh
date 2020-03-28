@@ -17,7 +17,7 @@ usage()
     echo "  EXLUSION: 51/71"
 }
 
-if [ "$1" = "-h" -o "$1" = "" ]; then
+if [ "$1" = "-h" ]; then
     usage
     exit
 # elif [ -n "$1" ]; then
@@ -160,7 +160,7 @@ if [ -d "$DEST_DIR" ]; then
     end_time=`date +%s`
     used_time=$(($end_time - $start_time))
     # 37 normal 32 success 33 warning 31 error
-    printf -- '\033[32m  Tag files for %s ready! Used %s seconds. \033[0m\n' $DEST_DIR $used_time;
+    printf -- '\033[32m\nTag files for %s ready! Used %s seconds. \033[0m\n' $DEST_DIR $used_time;
     
 else
     echo "$DEST_DIR NOT exist!"

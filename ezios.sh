@@ -108,7 +108,9 @@ rm -rf $dst_framework/sdk_framework
 echo "$src_framework ---> $dst_framework ..."
 cp -R $src_framework      $dst_framework
 
-rm -rf $dst_dsym/$sdk_dsym
-echo "$src_dsym ---> $dst_dsym ..."
-cp -R $src_dsym      $dst_dsym
+if [ $for_app = "t" ]; then
+  rm -rf $dst_dsym/$sdk_dsym
+  echo "$src_dsym ---> $dst_dsym ..."
+  cp -R $src_dsym      $dst_dsym
+fi
 

@@ -2,11 +2,11 @@
 
 # set -x
 
-addr2line="$HOME/Library/Android/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/\
+addr2line="$HOME/Library/Android/sdk/ndk/21.0.6113669/toolchains/arm-linux-androideabi-4.9/\
 prebuilt/darwin-x86_64/bin/arm-linux-androideabi-addr2line"
-addr2line_arm64="$HOME/Library/Android/sdk/ndk-bundle/toolchains/aarch64-linux-android-4.9/\
+addr2line_arm64="$HOME/Library/Android/sdk/ndk/21.0.6113669/toolchains/aarch64-linux-android-4.9/\
 /prebuilt/darwin-x86_64/bin/aarch64-linux-android-addr2line"
-ndk_stack="$HOME/Library/Android/sdk/ndk-bundle//prebuilt/darwin-x86_64/bin/ndk-stack"
+ndk_stack="$HOME/Library/Android/sdk/ndk/21.0.6113669/prebuilt/darwin-x86_64/bin/ndk-stack"
 
 # so_name="libzorro.so"
 # # so_dir_debug="/Volumes/espace/shared_vagrant/rtc_android_51/src/out/Debug/lib"
