@@ -181,4 +181,5 @@ alias wireshark="/Applications/Wireshark.app/Contents/MacOS/Wireshark"
 alias acrobat="/Applications/Adobe\ Acrobat\ DC/Adobe\ Acrobat.app/Contents/MacOS/AdobeAcrobat"
 alias sublime="/Applications/Sublime\ Text.app/Contents/MacOS/Sublime\ Text"
 alias gl5="git --no-pager log -n5"
+alias gls="git --no-pager log --oneline"
 
