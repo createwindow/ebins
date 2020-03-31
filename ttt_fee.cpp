@@ -218,22 +218,38 @@ int main(int argc, char* argv[])
   double zorro = 0.0;
   int month = 1;
 
+  if (argc == 2) {
+    string arg;
+    istringstream istrStream(argv[1]);
+    istrStream >> arg;
+    cout << "Help: " << endl
+         << " live_call_audio_thousand_minites; " << endl
+         << " live_call_video_thousand_minites; " << endl
+         << " live_transcode_thousand_minites; " << endl
+         << " chat_call_audio_thousand_minites; " << endl
+         << " live_inc; " << endl
+         << " chat_inc; " << endl
+         << " zorro_percent; " << endl
+         << " month; " << endl;
+    return 0;
+  }
+
   if (argc < 5) {
     cout << "ERROR: not enough arguments, at least 4 required." << endl;
     return -1;
   }
 
   for (int i = 0; i < argc; ++i) {
-   istringstream istrStream(argv[i]);
-   if (i == 1) {
-     istrStream >> live_call_audio_thousand_minites;
-   } else if (i == 2) {
-     istrStream >> live_call_video_thousand_minites;
-   } else if (i == 3) {
-     istrStream >> live_transcode_thousand_minites;
-   } else if (i == 4) {
-     istrStream >> chat_call_audio_thousand_minites;
-   }
+    istringstream istrStream(argv[i]);
+    if (i == 1) {
+      istrStream >> live_call_audio_thousand_minites;
+    } else if (i == 2) {
+      istrStream >> live_call_video_thousand_minites;
+    } else if (i == 3) {
+      istrStream >> live_transcode_thousand_minites;
+    } else if (i == 4) {
+      istrStream >> chat_call_audio_thousand_minites;
+    }
   }
 
   if (argc > 5) {
@@ -263,7 +279,6 @@ int main(int argc, char* argv[])
        << "chat_inc: " << chat_inc << endl
        << "month: " << month << endl;
 
-
   for (int i = 0; i < month; ++i) {
     cout << "\n============== Month " << i << "==============" << endl;
     double ttt_chat_call_audio_thousand_minites = chat_call_audio_thousand_minites * (1 - zorro);
@@ -272,19 +287,18 @@ int main(int argc, char* argv[])
       // z = 0.7;
     // }
 
-
-    double live_i = live_inc;
-    double chat_i = chat_inc;
+    double l_inc = live_inc;
+    double c_inc = chat_inc;
     if (i == 0) {
-      live_i = 0.0;
-      chat_i = 0.0;
+      l_inc = 0.0;
+      c_inc = 0.0;
     }
     month_fee(&live_call_audio_thousand_minites,
               &live_call_video_thousand_minites,
               &live_transcode_thousand_minites,
               &chat_call_audio_thousand_minites,
-              live_i,
-              chat_i,
+              l_inc,
+              c_inc,
               z);
   }
 
