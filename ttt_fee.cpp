@@ -234,6 +234,23 @@ int main(int argc, char* argv[])
     return 0;
   }
 
+  if (argc == 3) {
+    int chat_call_audio_thousand_minites_zorro;
+    int chat_call_audio_thousand_minites_ttt;
+    istringstream istrStream1(argv[1]);
+    istrStream1 >> chat_call_audio_thousand_minites_zorro;
+    istringstream istrStream2(argv[2]);
+    istrStream2 >> chat_call_audio_thousand_minites_ttt;
+
+    double partition = chat_call_audio_thousand_minites_zorro * 1.0 / 
+        (chat_call_audio_thousand_minites_zorro + chat_call_audio_thousand_minites_ttt);
+
+    cout << " chat_call_audio_thousand_minites_zorro: " << chat_call_audio_thousand_minites_zorro << endl
+         << " chat_call_audio_thousand_minites_ttt: " << chat_call_audio_thousand_minites_ttt << endl
+         << " partition: " << partition << endl;
+    return 0;
+  }
+
   if (argc < 5) {
     cout << "ERROR: not enough arguments, at least 4 required." << endl;
     return -1;
