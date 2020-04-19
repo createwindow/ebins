@@ -123,8 +123,8 @@ dir_aar_in_app="app/libs"
 # ================== TEST APP ===================
 elif [ $for_app = "p" ]; then
 # ================== StarMaker APP ===================
-# client_app="$HOME/mywork/ushow/starmaker-android-client"
-client_app="/Volumes/Samsung_T5/starmaker-android-client"
+# client_app="/Volumes/Samsung_T5/starmaker-android-client"
+client_app="$HOME/workspace/code/ushow/starmaker-android-client"
 dir_so_in_app="libraries/mediacore/src/main/libs/armeabi-v7a"
 dir_jar_in_app="libraries/mediacore/libs"
 dir_aar_in_app="libraries/aars"

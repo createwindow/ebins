@@ -4,7 +4,8 @@
 dbg="yes"
 prd="starmaker"
 arg=""
-starmaker_dir="/Volumes/Samsung_T5/starmaker-android-client"
+# starmaker_dir="/Volumes/Samsung_T5/starmaker-android-client"
+starmaker_dir="$HOME/workspace/code/ushow/starmaker-android-client"
 
 usage()
 {

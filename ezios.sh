@@ -96,7 +96,7 @@ dir_dsym_in_app="$dir_framework_in_app"
 elif [ $for_app = "p" ]; then
 # ================== StarMaker APP ===================
 client_app="$HOME/workspace/code/ushow/starmaker-ios-client"
-dir_framework_in_app="StarMaker/Feature/GiftService/ThirdParty/zorro"
+dir_framework_in_app="StarMaker/Feature/Live/ThirdParty/zorro"
 dir_dsym_in_app="$dir_framework_in_app"
 # ================== StarMaker APP ===================
 fi
