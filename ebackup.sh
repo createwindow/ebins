@@ -22,6 +22,7 @@ if [ "$1" = "-m" ]; then
 Preferences.sublime-settings $DST_DIR_CONFIGS/macOS/Preferences.sublime-settings
     cp /usr/local/texlive/texmf-local/tex/latex/local/*.cls  $DST_DIR_CONFIGS/macOS
     cp -R "$HOME/Library/Application Support/Texpad/Snippets" $DST_DIR_CONFIGS/macOS/texpad
+    cp -R "$HOME/Library/Application Support/Texpad/Templates" $DST_DIR_CONFIGS/macOS/texpad
 elif [ "$1" = "-u" ]; then
     cp /etc/profile $DST_DIR_CONFIGS/profile
     cp /etc/network/interfaces $DST_DIR_CONFIGS/interfaces
