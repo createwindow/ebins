@@ -212,21 +212,21 @@ int main(int argc, char* argv[])
   double live_call_audio_thousand_minites;
   double live_call_video_thousand_minites;
   double live_transcode_thousand_minites;
+  double chat_call_audio_thousand_minites_zorro;
+  double chat_call_audio_thousand_minites_3t;
   double chat_call_audio_thousand_minites;
   double live_inc = 0.0;
   double chat_inc = 0.0;
   double zorro = 0.0;
   int month = 1;
 
-  if (argc == 2) {
-    string arg;
-    istringstream istrStream(argv[1]);
-    istrStream >> arg;
+  if (argc <= 2) {
     cout << "Help: " << endl
          << " live_call_audio_thousand_minites; " << endl
          << " live_call_video_thousand_minites; " << endl
          << " live_transcode_thousand_minites; " << endl
-         << " chat_call_audio_thousand_minites; " << endl
+         << " chat_call_audio_thousand_minites_3t; " << endl
+         << " chat_call_audio_thousand_minites_zorro; " << endl
          << " live_inc; " << endl
          << " chat_inc; " << endl
          << " zorro_percent; " << endl
@@ -265,19 +265,24 @@ int main(int argc, char* argv[])
     } else if (i == 3) {
       istrStream >> live_transcode_thousand_minites;
     } else if (i == 4) {
-      istrStream >> chat_call_audio_thousand_minites;
+      istrStream >> chat_call_audio_thousand_minites_3t;
+    } else if (i == 5) {
+      istrStream >> chat_call_audio_thousand_minites_zorro;
     }
   }
 
-  if (argc > 5) {
-    for (int i = 5; i < argc; ++i) {
+  chat_call_audio_thousand_minites =
+      chat_call_audio_thousand_minites_3t + chat_call_audio_thousand_minites_zorro;
+  zorro = chat_call_audio_thousand_minites_zorro / chat_call_audio_thousand_minites;
+  if (argc > 6) {
+    for (int i = 6; i < argc; ++i) {
       istringstream istrStream(argv[i]);
-      if (i == 5) {
+      if (i == 6) {
         istrStream >> live_inc;
-      } else if (i == 6) {
-        istrStream >> chat_inc;
       } else if (i == 7) {
-        istrStream >> zorro;
+        istrStream >> chat_inc;
+      // } else if (i == 7) {
+        // istrStream >> zorro;
       } else if (i == 8) {
         istrStream >> month;
       }

@@ -271,66 +271,68 @@
   \def\temp{#1} 
   \ifx\temp\empty}
 
-%\renewcommand\maketitle{\par
-%  \begingroup
-%    \renewcommand\thefootnote{\@fnsymbol\c@footnote}%
-%    \def\@makefnmark{\rlap{\@textsuperscript{\normalfont\@thefnmark}}}%
-%    \long\def\@makefntext##1{\parindent 1em\noindent
-%         \hb@xt@1.8em{%
-%           \hss\@textsuperscript{\normalfont\@thefnmark}}##1}%
-%    \if@twocolumn
-%      \ifnum \col@number=\@ne
-%        \@maketitle
-%      \else
-%        \twocolumn[\@maketitle]%
-%      \fi
-%    \else
-%      %\newpage%
-%      \global\@topnum\z@  % Prevents figures from going at top of page.
-%      \@maketitle
-%    \fi
-%    \thispagestyle{empty}\@thanks
-%  \endgroup
-%  \setcounter{footnote}{0}%
-%  \global\let\thanks\relax
-%  \global\let\maketitle\relax
-%  \global\let\@maketitle\relax
-%  \global\let\@thanks\@empty
-%  \global\let\@author\@empty
-%  \global\let\@ELEGANT@version\@empty
-%  \global\let\@date\@empty
-%  \global\let\@title\@empty
-%  \global\let\title\relax
-%  \global\let\author\relax
-%  \global\let\date\relax
-%  \global\let\and\relax
-%  \global\let\ELEGANT@version\relax}
-%
-%\def\@maketitle{%
-%  \color{ecolor}
-%  \null
-%  \vskip 2em%
-%  \begin{center}%
-%    \let \footnote \thanks{%
-%      \LARGE\bfseries \@title \par}%
-%    \vskip 1.5em {%
-%      \large
-%      \lineskip .5em%
-%      \begin{tabular}[t]{c}%
-%        \@author\\
-%        \the\institute
-%      \end{tabular}\par}%
-%
-%  \IfEmpty\version
-%  \else 
+\renewcommand\maketitle{\par
+  \begingroup
+    \renewcommand\thefootnote{\@fnsymbol\c@footnote}%
+    \def\@makefnmark{\rlap{\@textsuperscript{\normalfont\@thefnmark}}}%
+    \long\def\@makefntext##1{\parindent 1em\noindent
+         \hb@xt@1.8em{%
+           \hss\@textsuperscript{\normalfont\@thefnmark}}##1}%
+    \if@twocolumn
+      \ifnum \col@number=\@ne
+        \@maketitle
+      \else
+        \twocolumn[\@maketitle]%
+      \fi
+    \else
+      %\newpage%
+      \global\@topnum\z@  % Prevents figures from going at top of page.
+      \@maketitle
+    \fi
+    \thispagestyle{empty}\@thanks
+  \endgroup
+  \setcounter{footnote}{0}%
+  \global\let\thanks\relax
+  \global\let\maketitle\relax
+  \global\let\@maketitle\relax
+  \global\let\@thanks\@empty
+  \global\let\@author\@empty
+  \global\let\@ELEGANT@version\@empty
+  \global\let\@date\@empty
+  \global\let\@title\@empty
+  \global\let\title\relax
+  \global\let\author\relax
+  \global\let\date\relax
+  \global\let\and\relax
+  \global\let\ELEGANT@version\relax}
+
+\def\@maketitle{%
+  \color{ecolor}
+  \null
+  \vskip 2em%
+  \begin{center}%
+    \let \footnote \thanks{%
+      \LARGE\bfseries \@title \par}%
+    \vskip 1.5em {%
+      \large
+      \lineskip .5em%
+      \begin{tabular}[t]{c}%
+        \@author\\
+        \the\institute
+      \end{tabular}\par}%
+
+  \IfEmpty\version
+  \else
 %    {\normalfont\citshape\versiontext\the\version \\}
-%  \fi
-%	\ifx\@date\empty
-%	\else 
+    {\normalfont\versiontext\the\version \\}
+  \fi
+	\ifx\@date\empty
+	\else
+    {\normalfont\@date}%
 %    {\normalfont\citshape\updatetext\@date}%
-%  \fi
-%  \end{center}%
-%  \par}
+  \fi
+  \end{center}%
+  \par}
 
 
 \RequirePackage{tikz}
@@ -359,7 +361,7 @@
 \lstdefinestyle{estyle}{
   basicstyle=%
     \ttfamily
-    \lst@ifdisplaystyle\small\fi}
+    \lst@ifdisplaystyle\footnotesize\fi}
 
 % \lstset{
 %   basicstyle=\scriptsize\ttfamily,
@@ -368,78 +370,182 @@
 \definecolor{lightgrey}{rgb}{0.9,0.9,0.9}
 \definecolor{frenchplum}{RGB}{190,20,83}
 
+
+\lstdefinelanguage{jitsi} {
+	style=estyle,
+	autogobble=true,
+	texcsstyle=*\color{winered},
+	numbers=none,
+	breaklines=true,
+	keywordstyle=\color{winered},
+	commentstyle=\color{gray},
+	alsoletter=-,
+	alsoother=<,
+	morekeywords={},
+	morestring=[b]",
+	morestring=[b]',
+	emph={%
+		iq,
+		conference,
+		content,
+		channel,
+		endpoint,
+		channel-bundle,
+		payload-type,
+		rtcp-fb,
+		rtp-hdrext,
+		source,
+		ssrc-info,
+		rtcp-mux,
+		transport,
+		parameter,
+		candidate,
+		fingerprint
+	}
+}
+
+\lstdefinelanguage{sdp} {
+	style=estyle,
+	autogobble=true,
+	texcsstyle=*\color{winered},
+	numbers=none,
+	breaklines=true,
+	keywordstyle=\color{winered},
+	commentstyle=\color{gray},
+	alsoletter=-,
+	alsoother=<,
+	morekeywords={},
+	morestring=[b]",
+	morestring=[b]',
+	emph={%
+		rtcp,
+		ice-ufrag,
+		ice-pwd,
+		ice-options,
+		fingerprint,
+		mid,
+		extmap,
+		rtcp-mux,
+		rtpmap,
+		rtcp-fb,
+		fmtp,
+		ssrc,
+		ssrc-group,
+		parameter,
+		candidate,
+		sctpmap,
+	},
+	morekeywords={%
+		video,
+		audio,
+	}
+}
+
+\lstdefinelanguage{java} {
+	style=estyle,
+	autogobble=true,
+	texcsstyle=*\color{winered},
+	numbers=none,
+	breaklines=true,
+	keywordstyle=\color{winered},
+	commentstyle=\color{gray},
+	morekeywords={},
+	morestring=[b]",
+	morestring=[b]',
+	emph={%
+		static,
+		main,
+	},
+	morekeywords={%
+		class,
+		enum,
+		@Override,
+		public,
+		private,
+		protected,
+		new,
+		void,
+		int,
+		for,
+		if,
+		else,
+		while,
+		return,
+	}
+}
+
 \lstset{language=[LaTeX]TeX,
-  style=estyle,
-  autogobble=true,
-  texcsstyle=*\color{winered},
-  numbers=none,
-  breaklines=true,
-  keywordstyle=\color{winered},
-  commentstyle=\color{gray},
-  emph={%
-    elegantpaper,
-    fontenc,
-    fontspec,
-    xeCJK,
-    FiraMono,
-    xunicode,
-    newtxmath,
-    figure,
-    fig,
-    image,
-    img,
-    table,
-    itemize,
-    enumerate,
-    newtxtext,
-    newtxtt,
-    ctex,
-    microtype,
-    description,
-    times,
-    newtx,
-    booktabs,
-    tabular,
-    PDFLaTeX,
-    XeLaTeX,
-    type1cm,
-    BibTeX,
-    device,
-    color,
-    mode,
-    chinesefont,
-    cite,
-    bibstyle,
-    math,
-    lang,
-    amsthm},
-  emphstyle={\color{frenchplum}},
-  morekeywords={%
-    DeclareSymbolFont,
-    setCJKfamilyfont,
-    SetSymbolFont,
-    toprule,
-    midrule,
-    bottomrule,
-    institute,
-    version,
-    includegraphics,
-    setmainfont,
-    setsansfont,
-    setmonofont ,
-    setCJKmainfont,
-    setCJKsansfont,
-    setCJKmonofont,
-    RequirePackage,
-    figref,
-    pagecolor,
-    definecolor,
-    tabref,
-    email,
-    maketitle,
-    keywords},
-  frame=none,
-  tabsize=2}
+	style=estyle,
+	autogobble=true,
+	texcsstyle=*\color{winered},
+	numbers=none,
+	breaklines=true,
+	keywordstyle=\color{winered},
+	commentstyle=\color{gray},
+	emph={%
+		elegantpaper,
+		fontenc,
+		fontspec,
+		xeCJK,
+		FiraMono,
+		xunicode,
+		newtxmath,
+		figure,
+		fig,
+		image,
+		img,
+		table,
+		itemize,
+		enumerate,
+		newtxtext,
+		newtxtt,
+		ctex,
+		microtype,
+		description,
+		times,
+		newtx,
+		booktabs,
+		tabular,
+		PDFLaTeX,
+		XeLaTeX,
+		type1cm,
+		BibTeX,
+		device,
+		color,
+		%mode,%
+		chinesefont,
+		cite,
+		bibstyle,
+		math,
+		lang,
+		amsthm},
+	emphstyle={\color{frenchplum}},
+	morekeywords={%
+		DeclareSymbolFont,
+		setCJKfamilyfont,
+		SetSymbolFont,
+		toprule,
+		midrule,
+		bottomrule,
+		institute,
+		version,
+		includegraphics,
+		setmainfont,
+		setsansfont,
+		setmonofont ,
+		setCJKmainfont,
+		setCJKsansfont,
+		setCJKmonofont,
+		RequirePackage,
+		figref,
+		pagecolor,
+		definecolor,
+		tabref,
+		email,
+		maketitle,
+		keywords},
+	frame=none,
+	tabsize=2}
 
 
 
