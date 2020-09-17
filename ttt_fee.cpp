@@ -127,9 +127,10 @@ static double actual_fee(double live_call_audio_thousand_minites,
                          live_call_video_thousand_minites,
                          live_transcode_thousand_minites,
                          ttt_chat_call_audio_thousand_minites);
-  cout << "\nBefore discount! Total fee is " << ret << endl;
+  cout << "Before discount! Total fee is " << ret << endl;
 
   double total;
+  cout << "After discount: " << ret << endl;
   if (ret > 1000000) {
     double live = live_fee(LEVEL_100W,
                            live_call_audio_thousand_minites,
@@ -182,20 +183,22 @@ static double month_fee(double *live_call_audio_thousand_minites,
   *chat_call_audio_thousand_minites *= (1 + chat_inc);
   double ttt_chat_call_audio_thousand_minites = *chat_call_audio_thousand_minites * (1 - zorro);
 
-    cout << "live_call_audio_thousand_minites: " << *live_call_audio_thousand_minites << endl
-         << "live_call_video_thousand_minites: " << *live_call_video_thousand_minites << endl
-         << "live_transcode_thousand_minites: "  << *live_transcode_thousand_minites << endl
-         << "chat_call_audio_thousand_minites: " << *chat_call_audio_thousand_minites << endl
-         << "zorro: " << zorro << endl
-         << "ttt_chat_call_audio_thousand_minites: " << ttt_chat_call_audio_thousand_minites << endl
-         << "live_inc: " << live_inc << endl
-         << "chat_inc: " << chat_inc << endl;
+  cout << "live_call_audio_thousand_minites: " << *live_call_audio_thousand_minites << endl
+       << "live_call_video_thousand_minites: " << *live_call_video_thousand_minites << endl
+       << "live_transcode_thousand_minites: "  << *live_transcode_thousand_minites << endl
+       << "chat_call_audio_thousand_minites: " << *chat_call_audio_thousand_minites << endl
+       << "zorro: " << zorro << endl
+       << "ttt_chat_call_audio_thousand_minites: " << ttt_chat_call_audio_thousand_minites << endl
+       << "live_inc: " << live_inc << endl
+       << "chat_inc: " << chat_inc << endl;
 
+  cout << "\n---==== Without ZORRO ====---" << endl;
   double if_no_zorro = actual_fee(*live_call_audio_thousand_minites,
                                   *live_call_video_thousand_minites,
                                   *live_transcode_thousand_minites,
                                   *chat_call_audio_thousand_minites);
 
+  cout << "\n---==== Using ZORRO ====---" << endl;
   double ret = actual_fee(*live_call_audio_thousand_minites,
                           *live_call_video_thousand_minites,
                           *live_transcode_thousand_minites,
