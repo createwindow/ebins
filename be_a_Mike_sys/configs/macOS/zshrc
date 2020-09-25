@@ -6,6 +6,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 DIR_SOFTWARE="$HOME/workspace/softwares"
 DIR_OPENSOURCE="$HOME/workspace/open_source"
+DIR_CODE="$HOME/workspace/code"
 
 # customized 
 export EBINS_HOME="$DIR_SOFTWARE/ebins"
@@ -31,12 +32,15 @@ export CLASSPATH=.:$CLASSPATH:$JAVA_HOME/lib
 # iterm2-zmodem
 ITEM2_ZMODEM_HOME="$DIR_SOFTWARE/iterm2-zmodem"
 
+# Android-Media-Stream repo script
+ANDROID_MEDIA_STREAM_REPO_SCRIPT_HOME="$DIR_CODE/ushow/android_media_stream/script"
+
 # use brew installed git, not Apple git
 export GIT_HOME="/usr/local"
 
 export PATH="$EBINS_HOME:$ANDROID_SDK_PLATFORM_TOOLS_HOME:$ANDROID_SDK_TOOLS_HOME:\
 $WEBRTC_DEPOT_HOME:$WEBRTC_ANDROID_BUILD_TOOL:$ARC_HOME:$LIBPHUTIL_HOME:\
-$JAVA_HOME/bin:$ITEM2_ZMODEM_HOME:$GIT_HOME/bin:$PATH"
+$JAVA_HOME/bin:$ITEM2_ZMODEM_HOME:$GIT_HOME/bin:$ANDROID_MEDIA_STREAM_REPO_SCRIPT_HOME:$PATH"
 
 # export GYP_DEFINES="OS=ios target_arch=arm64"
 # export GYP_GENERATOR_FLAGS="xcode_project_version=9.4 xcode_ninja_target_pattern=All_iOS xcode_ninja_executable_target_pattern=AppRTCDemo|libjingle_peerconnection_unittest|libjingle_peerconnection_objc_test output_dir=out_ios64"
