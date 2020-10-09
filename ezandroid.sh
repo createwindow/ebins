@@ -133,6 +133,17 @@ dir_aar_in_app="libraries/aars"
 media_stream_mod="$HOME/workspace/code/ushow/android_media_stream"
 dir_aar_in_ms_mod="mediastreamlib/aars"
 # ================== StarMaker APP ===================
+elif [ $for_app = "i" ]; then
+# ================== iMissYo APP ===================
+# client_app="/Volumes/Samsung_T5/starmaker-android-client"
+client_app="$HOME/workspace/code/ushow/voicex-android-client"
+dir_so_in_app="libraries/mediacore/src/main/libs/armeabi-v7a"
+dir_jar_in_app="libraries/mediacore/libs"
+dir_aar_in_app="libraries/aars"
+# media_stream_mod="$HOME/workspace/code/ushow/android_media_stream"
+# dir_aar_in_ms_mod="mediastreamlib/aars"
+# ================== iMissYo APP ===================
+
 fi
 
 

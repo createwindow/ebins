@@ -99,6 +99,13 @@ client_app="$HOME/workspace/code/ushow/starmaker-ios-client"
 dir_framework_in_app="StarMaker/Feature/Live/ThirdParty/zorro"
 dir_dsym_in_app="$dir_framework_in_app"
 # ================== StarMaker APP ===================
+elif [ $for_app = "i" ]; then
+# ================== iMissYo APP ===================
+client_app="$HOME/workspace/code/ushow/voicex-ios-client"
+dir_framework_in_app="StarMaker/Feature/Live/ThirdParty/zorro"
+dir_dsym_in_app="$dir_framework_in_app"
+# ================== iMissYo APP ===================
+
 fi
 
 dst_framework="$client_app/$dir_framework_in_app"
