@@ -17,13 +17,14 @@ usage()
     echo ""
     echo "Usage: $0 [OPTION]"
     echo "OPTION: -t, for test app (default option);"
-    echo "        -p, for product app."
+    echo "        -p, for product app (StarMaker)."
+    echo "        -i, for product app (iMissYo)."
     echo "        -d, for debug (default option)."
     echo "        -r, for release."
     echo "        -h, for help."
 }
 
-while getopts "tpdr" option
+while getopts "tpidr" option
 do
     case $option in
         h)  usage
@@ -43,6 +44,14 @@ do
                 exit
             else
                 for_app="p"
+            fi
+        ;;
+        i)  if [ "$for_app" = "t" -o "$for_app" = "p" ]; then
+                echo "Invalid option: i"
+                usage
+                exit
+            else
+                for_app="i"
             fi
         ;;
         d)  if [ "$build" = "r" ]; then

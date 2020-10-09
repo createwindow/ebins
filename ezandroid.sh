@@ -29,14 +29,15 @@ usage()
     echo ""
     echo "Usage: $0 [OPTION]"
     echo "OPTION: -t, for test app (default option);"
-    echo "        -p, for product app."
+    echo "        -p, for product app (StarMaker)."
+    echo "        -i, for product app (iMissYo)."
     echo "        -s, using the stripped library (default for release)."
     echo "        -d, for debug (default option)."
     echo "        -r, for release."
     echo "        -h, for help."
 }
 
-while getopts "tpsdr" option
+while getopts "tpisdr" option
 do
     case $option in
         h)  usage
@@ -56,6 +57,14 @@ do
                 exit
             else
                 for_app="p"
+            fi
+        ;;
+        i)  if [ "$for_app" = "t" -o "$for_app" = "p" ]; then
+                echo "Invalid option: i"
+                usage
+                exit
+            else
+                for_app="i"
             fi
         ;;
         d)  if [ "$build" = "r" ]; then
@@ -143,7 +152,6 @@ dir_aar_in_app="libraries/aars"
 # media_stream_mod="$HOME/workspace/code/ushow/android_media_stream"
 # dir_aar_in_ms_mod="mediastreamlib/aars"
 # ================== iMissYo APP ===================
-
 fi
 
 
