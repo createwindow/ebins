@@ -120,6 +120,8 @@ client_app="/Volumes/Samsung_T5/rtc_android_client"
 dir_so_in_app="app/src/main/libs/armeabi-v7a"
 dir_jar_in_app="app/libs"
 dir_aar_in_app="app/libs"
+media_stream_mod=""
+dir_aar_in_ms_mod=""
 # ================== TEST APP ===================
 elif [ $for_app = "p" ]; then
 # ================== StarMaker APP ===================
@@ -128,6 +130,8 @@ client_app="$HOME/workspace/code/ushow/starmaker-android-client"
 dir_so_in_app="libraries/mediacore/src/main/libs/armeabi-v7a"
 dir_jar_in_app="libraries/mediacore/libs"
 dir_aar_in_app="libraries/aars"
+media_stream_mod="$HOME/workspace/code/ushow/android_media_stream"
+dir_aar_in_ms_mod="mediastreamlib/aars"
 # ================== StarMaker APP ===================
 fi
 
@@ -135,6 +139,8 @@ fi
 dst_so="$client_app/$dir_so_in_app"
 dst_jar="$client_app/$dir_jar_in_app"
 dst_aar="$client_app/$dir_aar_in_app"
+
+dst_aar_1="$media_stream_mod/$dir_aar_in_ms_mod"
 
 # echo "$src_so ---> $dst_so ..."
 # cp    $src_so      $dst_so 
@@ -144,3 +150,8 @@ dst_aar="$client_app/$dir_aar_in_app"
 
 echo "$src_aar ---> $dst_aar ..."
 cp    $src_aar      $dst_aar
+if [ ! "$dst_aar_1" = "/" ]; then
+  echo "$src_aar ---> $dst_aar_1 ..."
+  cp    $src_aar      $dst_aar_1
+fi
+
